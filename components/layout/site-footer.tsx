@@ -1,13 +1,18 @@
 import Link from 'next/link';
 
 import { navigation } from '@/lib/data';
+import { BrandMark } from '@/components/ui/brand-mark';
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-charcoal/10 bg-cream/60">
+    <footer className="relative overflow-hidden bg-cream/60">
+      <div className="angled-separator-line" />
       <div className="mx-auto grid w-full max-w-content gap-12 px-5 py-16 md:grid-cols-3 md:px-8 lg:px-12">
         <div>
-          <h3 className="font-display text-3xl text-charcoal">Atelier Lactea</h3>
+          <div className="flex items-center gap-2.5">
+            <BrandMark className="h-6 w-6 text-charcoal/65" />
+            <h3 className="font-display text-3xl text-charcoal">Atelier Lactea</h3>
+          </div>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-charcoal/70">
             Modern heirloom jewelry crafted with tenderness, precision and enduring meaning.
           </p>
