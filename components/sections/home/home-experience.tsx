@@ -179,22 +179,26 @@ export function HomeExperience() {
           </div>
         </div>
 
-        {/* Hero image */}
+        {/* Hero image — blurred / dreamy treatment */}
         <div className="pointer-events-none absolute inset-y-0 right-0 w-full lg:w-[55%]">
           <Image
-            src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?auto=format&fit=crop&w=2400&q=80"
+            src="/images/hero.jpg"
             alt="Mother tenderly holding her newborn baby"
             fill
             priority
             sizes="(max-width: 1024px) 100vw, 55vw"
-            className="object-cover object-center"
+            className="scale-105 object-cover object-[center_20%] blur-[3px]"
           />
+          {/* Warm tint overlay */}
+          <div className="absolute inset-0 bg-ivory/15" />
           {/* Left fade into background */}
-          <div className="absolute inset-y-0 left-0 w-2/5 bg-gradient-to-r from-ivory via-ivory/85 to-transparent" />
+          <div className="absolute inset-y-0 left-0 w-2/5 bg-gradient-to-r from-ivory via-ivory/80 to-transparent" />
           {/* Bottom fade */}
-          <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-ivory to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-ivory to-transparent" />
+          {/* Top fade (soften into header) */}
+          <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-ivory/40 to-transparent" />
           {/* Mobile overlay for readability */}
-          <div className="absolute inset-0 bg-ivory/65 lg:hidden" />
+          <div className="absolute inset-0 bg-ivory/60 lg:hidden" />
         </div>
       </section>
 
