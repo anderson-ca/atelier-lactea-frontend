@@ -13,10 +13,20 @@ export type Product = {
 };
 
 export const navigation = [
-  { label: 'Home', href: '/' },
-  { label: 'Collection', href: '/collection' },
-  { label: 'Maison', href: '/maison' },
-  { label: 'Visit', href: '/contact' }
+  { label: 'Our Work', href: '/#our-work' },
+  { label: 'The Archive', href: '/#the-archive' },
+  { label: 'How It Works', href: '/#how-it-works' },
+  { label: "Mother's Archive", href: '/#mothers-archive' },
+  { label: "The Mother's Circle", href: '/#mothers-circle' },
+  { label: 'Contact', href: '/#contact' }
+];
+
+export const footerLinks = [
+  { label: 'Our Work', href: '/#our-work' },
+  { label: 'Collection', href: '/#the-archive' },
+  { label: "Mother's Archive", href: '/#mothers-archive' },
+  { label: "The Mother's Circle", href: '/#mothers-circle' },
+  { label: 'Privacy', href: '/privacy' }
 ];
 
 export const collections = [
@@ -179,7 +189,8 @@ export const serviceTiers = [
 ] as const;
 
 export const contactDetails = {
-  email: 'concierge@atelierlactea.com',
+  email: 'hello@atelierlacea.com',
+  instagram: '@atelierlacea',
   phone: '+33 1 84 12 72 64',
   address: '28 Rue des Archives, Le Marais, Paris',
   hours: 'Mon-Sat, 10:00 - 19:00'

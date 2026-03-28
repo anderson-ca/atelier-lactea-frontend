@@ -8,11 +8,11 @@ import { TierBadge } from '@/components/ui/tier-badge';
 import { products } from '@/lib/data';
 
 type ProductPageProps = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
-export default function ProductDetailPage({ params }: ProductPageProps) {
-  const { slug } = params;
+export default async function ProductDetailPage({ params }: ProductPageProps) {
+  const { slug } = await params;
   const product = products.find((item) => item.slug === slug);
 
   if (!product) notFound();

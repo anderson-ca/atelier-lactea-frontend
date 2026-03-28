@@ -4,17 +4,14 @@
 
 :root {
   color-scheme: light;
-  --tone-pearl: #fcf8f2;
-  --tone-ivory: #f7f3ec;
-  --tone-sand: #efe6da;
-  --tone-champagne: #e6d7c4;
-  --tone-stone: #dfcfbb;
-  --tone-gold-muted: #b89f7f;
-  --tone-deep-neutral: #d8c7b2;
 }
 
 * {
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 html,
@@ -35,179 +32,48 @@ a {
   font-family: var(--font-display), serif;
 }
 
-.parallax-wrap {
-  perspective: 1px;
-}
-
-.parallax-image {
-  transform: translateZ(-1px) scale(1.12);
-  transform-origin: center;
-}
-
-@media (max-width: 768px) {
-  .parallax-image {
-    transform: none;
-  }
-}
-
-.atelier-dots li button {
-  background: rgba(47, 42, 36, 0.25) !important;
-}
-
-.atelier-dots li.slick-active button {
-  background: rgba(47, 42, 36, 0.7) !important;
-}
-
+/* Ant Design drawer overrides */
 .atelier-drawer .ant-drawer-close {
   color: #2f2a24;
 }
 
-/* Hero-only scroll parallax with restrained movement. */
-.home-hero {
-  --hero-parallax-y: 0px;
-}
-
-.home-hero-media {
-  transform: translate3d(0, var(--hero-parallax-y), 0) scale(1.08);
-  will-change: transform;
-}
-
-.home-hero-lines {
-  pointer-events: none;
+/* Process step connecting line */
+.process-steps-line {
   position: absolute;
-  inset: 0;
-  z-index: 1;
-}
-
-.home-hero-plane {
-  position: absolute;
-  right: -8%;
-  top: 8%;
-  width: min(56vw, 820px);
-  height: min(50vh, 440px);
-  background: linear-gradient(
-    125deg,
-    rgba(247, 243, 236, 0.05) 0%,
-    rgba(230, 215, 196, 0.1) 60%,
-    rgba(184, 159, 127, 0.04) 100%
-  );
-  clip-path: polygon(14% 0%, 100% 0%, 84% 100%, 0% 100%);
-}
-
-.home-hero-line {
-  position: absolute;
+  top: 1.5rem;
+  left: 10%;
+  right: 10%;
   height: 1px;
-  background: linear-gradient(90deg, transparent 0%, rgba(247, 243, 236, 0.26) 48%, transparent 100%);
+  background: rgba(47, 42, 36, 0.12);
 }
 
-.home-hero-line-one {
-  top: 18%;
-  left: -7%;
-  width: min(60vw, 860px);
-  transform: rotate(-13deg);
+/* Subtle hover lift for cards */
+.hover-lift {
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.home-hero-line-two {
-  top: 34%;
-  left: -2%;
-  width: min(54vw, 740px);
-  transform: rotate(-13deg);
+.hover-lift:hover {
+  transform: translateY(-2px);
 }
 
-.home-hero-line-three {
-  bottom: 17%;
-  right: -8%;
-  width: min(52vw, 760px);
-  transform: rotate(-13deg);
-  opacity: 0.72;
-}
-
-.home-hero-line-four {
-  bottom: 30%;
-  right: 8%;
-  width: min(26vw, 380px);
-  transform: rotate(-13deg);
-  opacity: 0.55;
-}
-
-.home-hero-diagonal-cut {
-  position: absolute;
-  inset-inline: -2%;
-  bottom: -46px;
-  height: 100px;
-  background: linear-gradient(180deg, transparent 0%, rgba(247, 243, 236, 0.92) 100%);
-  transform: skewY(-2.4deg);
-  transform-origin: 100% 100%;
-  z-index: 1;
-}
-
-.angled-separator-line {
-  pointer-events: none;
-  position: absolute;
-  left: -4%;
-  top: -12px;
-  width: 108%;
-  height: 1px;
-  background: rgba(184, 159, 127, 0.38);
-  transform: rotate(-1.15deg);
-  transform-origin: left center;
-}
-
-/* Slow atmospheric movement for large editorial photography surfaces. */
-.home-parallax-media {
-  transform: scale(1.04);
-  animation: homeMediaDrift 24s ease-in-out infinite alternate;
-  will-change: transform;
-}
-
-@keyframes homeMediaDrift {
-  from {
-    transform: scale(1.04) translateY(0px);
-  }
-  to {
-    transform: scale(1.07) translateY(-8px);
-  }
-}
-
-@media (max-width: 768px) {
-  .home-hero-media {
-    transform: scale(1.03);
-  }
-
-  .home-hero-line-three,
-  .home-hero-line-four {
-    display: none;
-  }
-
-  .home-hero-plane {
-    right: -20%;
-    width: 90vw;
-    opacity: 0.7;
-  }
-
-  .home-parallax-media {
-    animation: none;
-    transform: scale(1.02);
-  }
-}
-
-@media (max-width: 1023px) {
-  .home-hero-line-four {
-    display: none;
-  }
-
-  .home-hero-media {
-    transform: scale(1.03);
-  }
+/* Form select arrow override */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath fill='%232F2A24' fill-opacity='.35' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0 center;
+  background-size: 12px;
+  padding-right: 20px;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .home-hero-media {
-    transform: none;
+  html {
+    scroll-behavior: auto;
   }
 
-  .home-parallax-media {
-    animation: none;
+  .hover-lift:hover {
     transform: none;
   }
 }

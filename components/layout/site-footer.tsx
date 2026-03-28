@@ -1,47 +1,47 @@
 import Link from 'next/link';
 
-import { navigation } from '@/lib/data';
-import { BrandMark } from '@/components/ui/brand-mark';
+import { footerLinks } from '@/lib/data';
 
 export function SiteFooter() {
   return (
-    <footer className="relative overflow-hidden bg-cream/60">
-      <div className="angled-separator-line" />
-      <div className="mx-auto grid w-full max-w-content gap-12 px-5 py-16 md:grid-cols-3 md:px-8 lg:px-12">
-        <div>
-          <div className="flex items-center gap-2.5">
-            <BrandMark className="h-6 w-6 text-charcoal/65" />
-            <h3 className="font-display text-3xl text-charcoal">Atelier Lactea</h3>
-          </div>
-          <p className="mt-4 max-w-sm text-sm leading-relaxed text-charcoal/70">
-            Modern heirloom jewelry crafted with tenderness, precision and enduring meaning.
+    <footer className="bg-charcoal text-ivory">
+      <div className="mx-auto flex w-full max-w-content flex-col gap-10 px-5 py-14 md:flex-row md:items-start md:justify-between md:px-8 lg:px-12">
+        {/* Brand */}
+        <div className="shrink-0">
+          <p className="font-display text-2xl italic">Atelier Lact&eacute;a</p>
+          <p className="mt-1 text-[9px] uppercase tracking-whisper text-ivory/30">
+            &middot; Maison d&rsquo;H&eacute;ritage &middot; Est. 2026
           </p>
         </div>
 
-        <div>
-          <p className="text-xs uppercase tracking-whisper text-charcoal/60">Navigation</p>
-          <ul className="mt-4 space-y-3">
-            {navigation.map((item) => (
-              <li key={item.href}>
-                <Link href={item.href} className="text-sm text-charcoal/75 transition-colors hover:text-charcoal">
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+        {/* Nav */}
+        <nav className="flex flex-wrap gap-x-8 gap-y-3">
+          {footerLinks.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="text-[11px] uppercase tracking-whisper text-ivory/45 transition-colors hover:text-ivory/75"
+            >
+              {item.label}
+            </Link>
+          ))}
+        </nav>
 
-        <div>
-          <p className="text-xs uppercase tracking-whisper text-charcoal/60">Concierge</p>
-          <ul className="mt-4 space-y-3 text-sm text-charcoal/75">
-            <li>concierge@atelierlactea.com</li>
-            <li>+33 1 84 12 72 64</li>
-            <li>28 Rue des Archives, Paris</li>
-          </ul>
+        {/* Contact */}
+        <div className="text-sm text-ivory/45 md:text-right">
+          <p>hello@atelierlacea.com</p>
+          <p className="mt-1">@atelierlacea</p>
         </div>
       </div>
-      <div className="border-t border-charcoal/10 py-4 text-center text-xs uppercase tracking-whisper text-charcoal/55">
-        Atelier Lactea 2026. Crafted with restraint.
+
+      {/* Bottom bar */}
+      <div className="border-t border-ivory/8">
+        <div className="mx-auto flex w-full max-w-content flex-col items-center justify-between gap-3 px-5 py-5 md:flex-row md:px-8 lg:px-12">
+          <p className="text-[11px] text-ivory/25">&copy; 2026 Atelier Lact&eacute;a</p>
+          <p className="font-display text-sm italic text-ivory/20">
+            Every heirloom created protects another mother
+          </p>
+        </div>
       </div>
     </footer>
   );
