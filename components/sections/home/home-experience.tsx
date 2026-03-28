@@ -179,26 +179,39 @@ export function HomeExperience() {
           </div>
         </div>
 
-        {/* Hero image — blurred / dreamy treatment */}
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-full lg:w-[55%]">
+        {/* Hero image — blurred / dreamy treatment.
+             Container starts at 40% from left (overlaps text zone) so the
+             blur never produces a hard edge. The wide ivory gradient on top
+             hides the overlap and creates the smooth fade seen in the ref. */}
+        <div className="pointer-events-none absolute inset-y-0 left-[40%] right-0 overflow-hidden lg:block hidden">
           <Image
             src="/images/hero.jpg"
             alt="Mother tenderly holding her newborn baby"
             fill
             priority
-            sizes="(max-width: 1024px) 100vw, 55vw"
-            className="scale-105 object-cover object-[center_20%] blur-[3px]"
+            sizes="60vw"
+            className="scale-110 object-cover object-[center_20%] blur-[3px]"
           />
-          {/* Warm tint overlay */}
-          <div className="absolute inset-0 bg-ivory/15" />
-          {/* Left fade into background */}
-          <div className="absolute inset-y-0 left-0 w-2/5 bg-gradient-to-r from-ivory via-ivory/80 to-transparent" />
+          {/* Warm tint */}
+          <div className="absolute inset-0 bg-ivory/10" />
+          {/* Left fade — wide enough to fully cover the blur fringe */}
+          <div className="absolute inset-y-0 left-0 w-3/5 bg-gradient-to-r from-ivory via-ivory/70 to-transparent" />
           {/* Bottom fade */}
           <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-ivory to-transparent" />
-          {/* Top fade (soften into header) */}
-          <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-ivory/40 to-transparent" />
-          {/* Mobile overlay for readability */}
-          <div className="absolute inset-0 bg-ivory/60 lg:hidden" />
+          {/* Top fade */}
+          <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-ivory/30 to-transparent" />
+        </div>
+        {/* Mobile: full-width behind text with heavy overlay */}
+        <div className="pointer-events-none absolute inset-0 lg:hidden">
+          <Image
+            src="/images/hero.jpg"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-[center_20%]"
+          />
+          <div className="absolute inset-0 bg-ivory/65" />
         </div>
       </section>
 
