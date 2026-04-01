@@ -1,20 +1,32 @@
 'use client';
 
-import Link from 'next/link';
 import { useState } from 'react';
 import { Drawer } from 'antd';
 
-import { navigation } from '@/lib/data';
+import { useLanguage, type SiteLocale } from '@/lib/language-context';
+import { siteContent } from '@/lib/site-content';
+
+const navHrefs = ['#focus', '#tiers', '#process', '#mothers-archive', '#circle', '#contact'];
+const locales: SiteLocale[] = ['az', 'en', 'ru'];
 
 export function MobileMenu() {
   const [open, setOpen] = useState(false);
+  const { locale, setLocale } = useLanguage();
+  const c = siteContent[locale];
+  const navItems = [c.nav.work, c.nav.archive, c.nav.process, c.nav.mothers, c.nav.circle, c.nav.contact];
+
+  const go = (href: string) => {
+    setOpen(false);
+    const el = document.querySelector(href);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <>
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className="inline-flex h-10 w-10 items-center justify-center text-charcoal xl:hidden"
+        className="inline-flex h-10 w-10 items-center justify-center text-maroon xl:hidden"
         aria-label="Open navigation"
       >
         <svg width="22" height="14" viewBox="0 0 22 14" fill="none" stroke="currentColor" strokeWidth="1.4">
@@ -30,41 +42,48 @@ export function MobileMenu() {
         width={320}
         rootClassName="atelier-drawer"
         styles={{
-          body: { background: '#F7F3EC', padding: '2rem' },
-          header: { background: '#F7F3EC', borderBottom: '1px solid rgba(47,42,36,0.1)' }
+          body: { background: '#faf6f0', padding: '2rem' },
+          header: { background: '#faf6f0', borderBottom: '1px solid rgba(200,168,130,0.2)' }
         }}
         title={
-          <span className="font-display text-lg font-semibold uppercase tracking-[0.06em] text-charcoal">
+          <span className="text-[15px] font-normal uppercase tracking-[0.3em] text-maroon">
             Atelier Lact&eacute;a
           </span>
         }
       >
         <nav className="space-y-6">
-          {navigation.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="block text-sm uppercase tracking-whisper text-charcoal/75"
-              onClick={() => setOpen(false)}
+          {navItems.map((label, i) => (
+            <button
+              key={navHrefs[i]}
+              type="button"
+              className="block text-[11px] uppercase tracking-whisper text-text-mid"
+              onClick={() => go(navHrefs[i])}
             >
-              {item.label}
-            </Link>
+              {label}
+            </button>
           ))}
         </nav>
+
         <div className="mt-10 flex gap-4">
-          {['EN', 'AZ', 'RU'].map((loc) => (
-            <button key={loc} type="button" className="text-xs tracking-wider text-charcoal/45">
-              {loc}
+          {locales.map((loc) => (
+            <button
+              key={loc}
+              type="button"
+              onClick={() => setLocale(loc)}
+              className={`text-[10px] tracking-whisper ${locale === loc ? 'font-normal text-maroon' : 'text-text-soft'}`}
+            >
+              {loc.toUpperCase()}
             </button>
           ))}
         </div>
-        <Link
-          href="/#contact"
-          onClick={() => setOpen(false)}
-          className="mt-8 block bg-charcoal px-6 py-4 text-center text-[11px] font-semibold uppercase tracking-whisper text-ivory"
+
+        <button
+          type="button"
+          onClick={() => go('#consult')}
+          className="mt-8 block w-full bg-maroon px-6 py-4 text-center text-[11px] uppercase tracking-[0.28em] text-gold-light"
         >
-          Begin Consultation
-        </Link>
+          {c.nav.cta}
+        </button>
       </Drawer>
     </>
   );

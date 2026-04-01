@@ -1,47 +1,57 @@
-import Link from 'next/link';
+'use client';
 
-import { footerLinks } from '@/lib/data';
+import { useLanguage } from '@/lib/language-context';
+import { siteContent } from '@/lib/site-content';
+
+const footerHrefs = ['#focus', '#tiers', '#mothers-archive', '#circle', '#'];
 
 export function SiteFooter() {
+  const { locale } = useLanguage();
+  const c = siteContent[locale];
+
   return (
-    <footer className="bg-charcoal text-ivory">
-      <div className="mx-auto flex w-full max-w-content flex-col gap-10 px-5 py-14 md:flex-row md:items-start md:justify-between md:px-8 lg:px-12">
-        {/* Brand */}
-        <div className="shrink-0">
-          <p className="font-display text-2xl italic">Atelier Lact&eacute;a</p>
-          <p className="mt-1 text-[9px] uppercase tracking-whisper text-ivory/30">
+    <footer className="bg-maroon px-6 pb-7 pt-12 md:px-16">
+      {/* Top row */}
+      <div className="flex flex-col items-start justify-between gap-8 border-b border-gold/[0.08] pb-7 md:flex-row md:items-center">
+        <div>
+          <div className="text-[15px] italic tracking-[0.28em] text-gold">
+            Atelier Lact&eacute;a
+          </div>
+          <div className="mt-1 text-[9px] uppercase tracking-[0.2em] text-gold/[0.35]">
             &middot; Maison d&rsquo;H&eacute;ritage &middot; Est. 2026
-          </p>
+          </div>
         </div>
 
-        {/* Nav */}
-        <nav className="flex flex-wrap gap-x-8 gap-y-3">
-          {footerLinks.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="text-[11px] uppercase tracking-whisper text-ivory/45 transition-colors hover:text-ivory/75"
-            >
-              {item.label}
-            </Link>
-          ))}
+        <nav>
+          <ul className="flex list-none flex-wrap gap-7">
+            {c.footer.links.map((label, i) => (
+              <li key={i}>
+                <a
+                  href={footerHrefs[i]}
+                  className="text-[11px] uppercase tracking-[0.16em] text-gold/[0.55] transition-colors hover:text-gold"
+                >
+                  {label}
+                </a>
+              </li>
+            ))}
+          </ul>
         </nav>
 
-        {/* Contact */}
-        <div className="text-sm text-ivory/45 md:text-right">
-          <p>hello@atelierlacea.com</p>
-          <p className="mt-1">@atelierlacea</p>
+        <div className="text-[13px] leading-[1.8] text-gold/[0.35] md:text-right">
+          hello@atelierlacea.com
+          <br />
+          @atelierlacea
         </div>
       </div>
 
-      {/* Bottom bar */}
-      <div className="border-t border-ivory/8">
-        <div className="mx-auto flex w-full max-w-content flex-col items-center justify-between gap-3 px-5 py-5 md:flex-row md:px-8 lg:px-12">
-          <p className="text-[11px] text-ivory/25">&copy; 2026 Atelier Lact&eacute;a</p>
-          <p className="font-display text-sm italic text-ivory/20">
-            Every heirloom created protects another mother
-          </p>
-        </div>
+      {/* Bottom row */}
+      <div className="mt-5 flex flex-col items-center justify-between gap-3 md:flex-row">
+        <span className="text-[10px] tracking-[0.12em] text-gold/20">
+          &copy; 2026 Atelier Lact&eacute;a
+        </span>
+        <span className="text-[10px] italic text-gold/25">
+          {c.footer.tagline}
+        </span>
       </div>
     </footer>
   );

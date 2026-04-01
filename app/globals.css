@@ -6,74 +6,126 @@
   color-scheme: light;
 }
 
-* {
-  box-sizing: border-box;
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+html, body {
+  background: #faf6f0;
+  color: #1c0608;
+  font-family: var(--font-display), 'Cormorant Garamond', Georgia, serif;
+  font-weight: 300;
+  overflow-x: hidden;
 }
 
-html {
-  scroll-behavior: smooth;
+a { color: inherit; text-decoration: none; }
+
+.font-display {
+  font-family: var(--font-display), 'Cormorant Garamond', Georgia, serif;
 }
 
-html,
-body {
-  margin: 0;
-  padding: 0;
-  background: #f7f3ec;
-  color: #2f2a24;
+.font-body {
   font-family: var(--font-body), sans-serif;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.font-display {
-  font-family: var(--font-display), serif;
-}
-
-/* Ant Design drawer overrides */
-.atelier-drawer .ant-drawer-close {
-  color: #2f2a24;
-}
-
-/* Process step connecting line */
-.process-steps-line {
+/* ── Hero image treatment ── */
+.hero-photo {
   position: absolute;
-  top: 1.5rem;
-  left: 10%;
-  right: 10%;
-  height: 1px;
-  background: rgba(47, 42, 36, 0.12);
+  inset: 0;
+  background-image: url('/images/hero.jpg');
+  background-size: cover;
+  background-position: center 20%;
+  filter: brightness(1.06) contrast(0.84) saturate(0.78) blur(4px) sepia(8%);
+  opacity: 0.72;
 }
 
-/* Subtle hover lift for cards */
-.hover-lift {
-  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+.hero-tint {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(200, 168, 130, 0.12) 0%,
+    rgba(250, 240, 220, 0.08) 50%,
+    rgba(200, 168, 130, 0.06) 100%
+  );
 }
 
-.hover-lift:hover {
-  transform: translateY(-2px);
+.hero-face-wash {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 55%;
+  background: radial-gradient(
+    ellipse 65% 70% at 55% 35%,
+    rgba(250, 246, 240, 0.55) 0%,
+    rgba(250, 246, 240, 0.3) 40%,
+    rgba(250, 246, 240, 0.08) 70%,
+    transparent 100%
+  );
 }
 
-/* Form select arrow override */
+.hero-fade {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(
+    to right,
+    rgba(250, 246, 240, 1) 0%,
+    rgba(250, 246, 240, 0.99) 25%,
+    rgba(250, 246, 240, 0.82) 40%,
+    rgba(250, 246, 240, 0.25) 60%,
+    rgba(250, 246, 240, 0) 100%
+  );
+}
+
+/* ── Reveal animations ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Process steps connecting line ── */
+.steps-line {
+  position: absolute;
+  top: 26px;
+  left: 5%;
+  right: 5%;
+  height: 0.5px;
+  background: linear-gradient(to right, transparent, #c8a882, #c8a882, transparent);
+  opacity: 0.2;
+}
+
+/* ── Form select styling ── */
 select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath fill='%232F2A24' fill-opacity='.35' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath fill='%23c8a882' fill-opacity='.5' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 0 center;
   background-size: 12px;
   padding-right: 20px;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
+/* ── Ant Design drawer ── */
+.atelier-drawer .ant-drawer-close {
+  color: #1c0608;
+}
 
-  .hover-lift:hover {
-    transform: none;
-  }
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: #faf6f0; }
+::-webkit-scrollbar-thumb { background: rgba(200, 168, 130, 0.35); }
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
 }
