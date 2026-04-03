@@ -395,9 +395,9 @@ export function HomeExperience() {
             <div className="mb-4 text-[22px] text-gold/[0.55]">&#9993;</div>
             <div className="mb-[10px] text-base font-normal text-maroon">{c.contact.email.name}</div>
             <p className="mb-[18px] text-sm font-light leading-[1.78] text-text-soft">{c.contact.email.body}</p>
-            <a href="mailto:hello@atelierlacea.com"
+            <a href="mailto:hello@atelierlactea.com"
               className="border-b border-gold/35 pb-[3px] text-[10px] uppercase tracking-[0.2em] text-gold transition-opacity hover:opacity-60">
-              hello@atelierlacea.com
+              hello@atelierlactea.com
             </a>
           </div>
           {/* Instagram */}
@@ -405,9 +405,9 @@ export function HomeExperience() {
             <div className="mb-4 text-[22px] text-gold/[0.55]">&#9900;</div>
             <div className="mb-[10px] text-base font-normal text-maroon">Instagram</div>
             <p className="mb-[18px] text-sm font-light leading-[1.78] text-text-soft">{c.contact.instagram.body}</p>
-            <a href="https://instagram.com/atelierlacea" target="_blank" rel="noopener noreferrer"
+            <a href="https://instagram.com/atelierlactea" target="_blank" rel="noopener noreferrer"
               className="border-b border-gold/35 pb-[3px] text-[10px] uppercase tracking-[0.2em] text-gold transition-opacity hover:opacity-60">
-              @atelierlacea
+              @atelierlactea
             </a>
           </div>
           {/* WhatsApp */}
