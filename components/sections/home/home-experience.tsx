@@ -353,7 +353,8 @@ export function HomeExperience() {
             <div className="mb-6">
               <label className="mb-[9px] block text-[10px] uppercase tracking-[0.24em] text-text-soft">{c.consult.labels.vision}</label>
               <textarea value={form.vision} onChange={(e) => set('vision', e.target.value)} rows={3}
-                className="w-full resize-none border-b border-gold/35 bg-transparent pb-[9px] pt-[9px] text-[15px] font-light text-text-dark outline-none transition-colors focus:border-maroon" />
+  placeholder={c.consult.labels.visionPlaceholder}
+  className="w-full resize-none border-b border-gold/35 bg-transparent pb-[9px] pt-[9px] text-[15px] font-light text-text-dark outline-none transition-colors focus:border-maroon" />
             </div>
 
             {/* Contact preference */}
