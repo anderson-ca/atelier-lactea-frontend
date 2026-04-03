@@ -29,7 +29,7 @@ export type SiteCopy = {
   consult: {
     eyebrow: string; title1: string; title2: string; body: string; points: string[];
     formTitle: string;
-    labels: { fn: string; ln: string; email: string; phone: string; orderFor: string; tier: string; vision: string; pref: string };
+    labels: { fn: string; ln: string; email: string; phone: string; orderFor: string; tier: string; vision: string; visionPlaceholder: string; pref: string };
     forOptions: string[]; tierOptions: string[];
     prefLabels: { video: string; phone: string; email: string };
     submit: string; note: string;
@@ -59,37 +59,37 @@ export const siteContent: Record<SiteLocale, SiteCopy> = {
     focus: {
       eyebrow: 'Nə edirik',
       title1: 'Ana südü,', title2: 'əbədi qorunur',
-      lead: 'Atelier Lactéa ana südünü incə əl işçiliyi ilə hazırlanmış, ömür boyu qorunacaq zinət əşyasına çevirir. Hər bir parça analığın ən dəyərli dövrünü zərif, şəxsi və unudulmaz bir xatirə kimi yaşatmaq üçün yaradılır. Bu, sadəcə bəzək deyil, analığın ən həssas, ən qiymətli dövrünü gələcəyə daşıyan və nəsildən-nəslə ötürülə bilən bir yadigardır.',
-      note: 'Ana südü vermisinizsə, bu sizin üçündür. Vermədinizsə, yenə də xoş gəlmisiniz. Körpə saçı, doğum daşı və ya hər ikisinin birləşməsi ilə analığın ilk dövrünü əbədiləşdirmək mümkündür.'
+      lead: 'Atelier Lactéa ana südünü incə əl işçiliyi ilə əbədi bir zinət əşyasına çevirir. Hər parça analığın ən həssas dövrünü — o təkrar olunmaz yaxınlığı, o ilk ayları — gələcəyə daşımaq üçün yaradılır. Bu, sadəcə bəzək deyil. Nəsildən-nəslə ötürülən, hər dəfə taxılanda o dövrü yenidən hiss etdirən bir yadigardır.',
+      note: 'Ana südü vermisinizsə, bu sizin üçündür. Verməmisinizsə, bu yenə də sizin üçündür. Körpə saçı, doğum daşı və ya hər ikisi — analığın ilk izi, seçdiyiniz formada qorunur.'
     },
     ext: {
       eyebrow: 'Əlavə materiallar', title: 'Analığın hər dövrü üçün',
-      intro: 'Ana südü etdiyimiz işin özəyidir. Lakin ana südü verməyən, ya da artıq saxlamayan analar üçün eyni dərinliyə sahib alternativlər təklif edirik.',
+      intro: 'Ana südü etdiyimiz işin özəyidir. Lakin bu təcrübə hər kəs üçün özünəməxsusdur və bu xüsusi anı əbədiləşdirmək üçün eyni dərinliyə sahib Əlavə seçimlər təklif edirik.',
       items: [
-        { name: 'Körpə Saçı', subtitle: 'Ana südü verməyənlər üçün', desc: 'İlk tel, seçdiyiniz parçaya həkk olunur. Əvəzolunmaz, incə və uşağınızın dünyaya gəlişinin ən erkən fiziki izi.' },
+        { name: 'Körpə Saçı', subtitle: 'Körpənizin o ilk əvəzolunmaz teli', desc: 'O ilk tel — incə, xüsusi və körpənizin dünyaya gəlişinin ən erkən fiziki izi. Seçdiyiniz parçaya həkk olunaraq həmişəlik sizinlə qalır.' },
         { name: 'Doğum Daşı', subtitle: 'Tək və ya ana südü ilə birlikdə', desc: 'Uşağınızın doğulduğu ayın daşı. Ana südü ilə birlikdə və ya ayrıca, həm o günü, həm də o sevgini əbədiləşdirir.' },
         { name: 'Qarışıq', subtitle: 'İki və ya daha çox material', desc: 'Ana südü və körpə saçı. Ana südü və doğum daşı. Hər üçü birlikdə. Hər element eyni məhəbbətin fərqli bir qatını daşıyır.' }
       ]
     },
     tiers: {
       eyebrow: 'Kolleksiya', title: 'Hər ana üçün bir yadigar',
-      note: 'Üç səviyyə, bir məqsəd. Hər ana, büdcəsindən asılı olmayaraq, bu dövrü qorumağa layiqdir. Hər biri fərdi konsultasiya və eyni sənətkarlıq həssaslığı ilə başlayır.',
+      note: 'Üç ifadə, bir məqsəd. Bu dövrü qorumaq hər ananın haqqıdır. Hər biri fərdi konsultasiya və eyni sənətkarlıq həssaslığı ilə başlayır.',
       items: [
-        { mat: 'Paslanmayan Polad', desc: 'Keçib getsə də, iz qoyan anı qorumaq üçün yaradılmışdır. Davamlı, incə və ürəyinizə yaxın.', tag: 'İndi və həmişə' },
-        { mat: 'Qızıl Örtüklü', desc: 'Işıltılı və isti, içindəki hissləri əks etdirən zərifliyi ilə. Dərin mənalı bir parça, çox vaxt hədiyyə olaraq seçilir və xatirələrdə qalır.', tag: 'Qiymətli bir hədiyyə' },
-        { mat: 'Fərdi · Əl İşi', desc: 'Sizin hekayəniz, xatirələriniz və ən çox əhəmiyyət daşıyan detallar əsasında yaradılan tək bir əsər. Heç bir iki Maison parçası eyni olmayacaq.', tag: 'Yalnız sizin üçün' }
+        { mat: 'Paslanmayan Metal', desc: 'Analığın ilk dövrünün ən xüsusi xatirəsi — ana südünüz, əl ilə hazırlanmış zərif bir zinət əşyasına çevrilir. Hazır formalar arasından seçdiyiniz pendant, yalnız sizin hekayənizi daşıyır.', tag: 'İndi və həmişə' },
+        { mat: 'Qızıl Örtüklü', desc: 'Essentia-nın bütün zərifliyi, qızılın istiliyi ilə. Ana südünüz, parıltılı və isti bir parçada əbədiləşir. Hazır formalar arasından seçilir və xatirələrdə qalır.', tag: 'Qiymətli bir hədiyyə' },
+        { mat: 'Fərdi · Əl İşi', desc: 'Maison tamamilə başqadır, sizin üçün sıfırdan yaradılan bir əsər. Xüsusi konsultasiyalarda sizinlə birlikdə hər detala qərar verilir, hamısı ən dəyərli metallar ilə yalnız sizin hekayənizə uyğun hazırlanır. Heç bir başqa Maison əsəri eyni olmayacaq.', tag: 'Yalnız sizin üçün' }
       ]
     },
     process: {
       intro: 'Heç nə tələsdirilmir. Hər ana hər addımda diqqət və qayğı ilə müşayiət olunur.',
       title1: 'İlk söhbətdən', title2: 'əbədi geyinilənə',
-      tagline: 'Hər yadigar fərdi konsultasiya ilə başlayır. Sonrası isə tamamilə sizin ətrafınızda qurulmuş, düşünülmüş bir prosesdir.',
+      tagline: 'Hər sifariş fərdi konsultasiya ilə başlayır, sonrası isə tamamilə sizin ətrafınızda qurulmuş, düşünülmüş bir prosesdir.',
       steps: [
-        { name: 'Konsultasiya', detail: 'WhatsApp, video və ya telefon vasitəsilə, öz dilimizdə özəl bir söhbət. Hekayənizi, vizyonunuzu öyrənir, sizi ən uyğun səviyyə və formaya yönləndiririk.' },
-        { name: 'Dizayn və Depozit', detail: 'Hazır olduğunuzda depozit sifarişinizi təsdiqləyir. Birlikdə dizaynı dəqiqləşdiririk. Essentia və Aurea üçün mövcud formalardan seçirsiniz. Maison üçün isə tamamilə orijinal bir əsər yaradırıq.' },
-        { name: 'Materialın Toplanması', detail: 'Dizayn təsdiqləndikdən sonra sizə steril toplama torbası göndəririk, pulsuz olaraq. Öz nasosunuzla südü ifraz edin, torbamıza köçürün və geri göndərin. Qalan hər şey bizdədir.', note: 'Toplama torbası pulsuz göndərilir' },
-        { name: 'Əl İşi', detail: 'Parçanız seçdiyiniz metalla əllə hazırlanır. Maison müştəriləri yaradılış prosesinin hər mərhələsində bilavasitə zərgər tərəfdaşımızla işləyir.' },
-        { name: 'Yadigarınız', detail: 'Atelier Lactéa qablaşdırmasında, qoruma sertifikatı ilə çatdırılır. Bu gün açılacaq, nəsillər boyu daşınacaq bir hədiyyə.' }
+        { name: 'Konsultasiya', detail: 'WhatsApp, video və ya telefon vasitəsilə sizinlə əlaqə saxlayır, hekayənizi və vizyonunuzu öyrənir, sizi ən uyğun ifadəyə və formaya yönləndiririk.' },
+        { name: 'Dizayn və Depozit', detail: 'Hazır olduğunuzda depozit sifarişinizi təsdiqləyir. Birlikdə dizaynı dəqiqləşdiririk. Essentia və Aurea üçün mövcud formalardan seçirsiniz, Maison üçün isə tamamilə orijinal bir əsər yaradırıq. Depozit yekun məbləğə daxil edilir. Sifariş ləğv edildiyi təqdirdə depozit geri qaytarılmır.' },
+        { name: 'Materialın Toplanması', detail: 'Dizayn təsdiqləndikdən və depozit ödəndikdən sonra sizə ABŞ-dan gətirilmiş steril tibbi süd saxlama konteynerləri təqdim edilir, pulsuz olaraq. Hazır olduğunuzda südü tarix və ad qeyd edərək geri göndərirsiniz. Qalan hər şey bizdədir.', note: 'Steril tibbi konteyner pulsuz təqdim edilir' },
+        { name: 'Əl İşi', detail: 'Parçanız seçdiyiniz metalla əllə hazırlanır. Hazırlanma müddəti sifarişin mürəkkəbliyinə görə dəyişir — sizi hər mərhələdə məlumatlandırır və dəqiq hazırlanma cədvəli ilə təmin edirik.' },
+        { name: 'Təhvil', detail: 'Parçanız Atelier Lactéa qablaşdırmasında çatdırılır. Bu gün açılacaq, nəsillər boyu daşınacaq.' }
       ]
     },
     archiveQuote: 'Bir zamanlar övladınızı bəsləyən sevgi, indi sizinlə qalır.',
@@ -98,29 +98,36 @@ export const siteContent: Record<SiteLocale, SiteCopy> = {
       items: [
         { tier: 'Aurea · Qızıl Örtüklü', name: 'Leyla üçün', story: 'On bir ay ana südü verdim. Bitdikdə əlimdə qalan bir şey olsun istədim.' },
         { tier: 'Maison · Fərdi', name: 'Aynur üçün', story: 'Qızımın birinci ad günündə ərim hədiyyə etdi. Açanda ağlayacağımı gözləmirdim.' },
-        { tier: 'Essentia · Paslanmayan Polad', name: 'Nigar üçün', story: 'Ana südü verə bilmədim. Onun saçından bir tel istifadə etdik. Mənası heç də az deyil.' }
+        { tier: 'Essentia · Paslanmayan Metal', name: 'Nigar üçün', story: 'Ana südü verə bilmədim. Onun saçından bir tel istifadə etdik. Mənası heç də az deyil.' }
       ]
     },
     circle: {
       eyebrow: 'Anaların Dairəsi',
-      title1: 'Yaratdığınız hər yadigar', title2: 'başqa bir anaya kömək edir',
-      body: 'Hər Atelier Lactéa alışının 10 faizi birbaşa ehtiyacı olan analara gedir. Qida, uşaq bezi və həssas vəziyyətdəki qadın və uşaqlar üçün, o cümlədən zorakılığa məruz qalanlar üçün təhlükəsiz sığınacaq. Hər ay, şəffaf hesabatla.',
-      stat1Label: 'Hər alışdan, hər ay', stat1Body: 'Qida, mənzil problemləri və ev zorakılığı ilə üzləşən analara gedir. İstisna yoxdur.',
-      stat2Num1: 'Aylıq', stat2Num2: 'hesabat', stat2Label: 'Tam şəffaflıq', stat2Body: 'Hər müştəri töhfəsinin tam olaraq hara getdiyini bilmək üçün aylıq hesabat dərc edirik.'
+      title1: 'Yaratdığınız hər sifariş', title2: 'başqa bir anaya kömək edir',
+      body: 'Hər Atelier Lactéa alışının 10 faizi birbaşa ehtiyacı olan analara gedir. Qida, gündəlik ehtiyaclar və çətin vəziyyətdə olan analar üçün. Hər ay, tam şəffaflıqla.',
+      stat1Label: 'Hər alışdan, hər ay', stat1Body: 'Ehtiyacı olan analara birbaşa çatır. İstisna yoxdur.',
+      stat2Num1: 'Aylıq', stat2Num2: 'hesabat', stat2Label: 'Tam şəffaflıq', stat2Body: 'Hər töhfənin hara getdiyini hər ay açıq şəkildə paylaşırıq.'
     },
     consult: {
-      eyebrow: 'Buradan başlayın', title1: 'Yadigarınız bir', title2: 'söhbətlə başlayır',
+      eyebrow: 'Buradan başlayın', title1: 'Sifarişiniz bir', title2: 'söhbətlə başlayır',
       body: 'Özünüz və təsəvvür etdiyiniz parça haqqında bizə məlumat verin. 48 saat ərzində fərdi konsultasiyanızı planlamaq üçün sizinlə əlaqə saxlayacağıq.',
       points: [
-        'Pulsuz, ilk konsultasiya üçün heç bir ödəniş tələb olunmur',
-        'Məxfi, hekayəniz yalnız bizdə qalır',
+        'Pulsuz — ilk konsultasiya üçün heç bir ödəniş tələb olunmur',
+        'Məxfi — hekayəniz yalnız bizdə qalır',
         'Azərbaycan, ingilis və rus dillərində mövcuddur',
-        'Sifarişiniz təsdiqləndikdən sonra steril toplama dəstimizi ünvanınıza pulsuz çatdırırıq'
+        'Sifarişiniz təsdiqləndikdən sonra steril tibbi süd saxlama konteynerlərinizi ünvanınıza pulsuz çatdırırıq'
       ],
       formTitle: 'Konsultasiya planla',
-      labels: { fn: 'Ad', ln: 'Soyad', email: 'E-poçt', phone: 'Telefon / WhatsApp', orderFor: 'Kimin üçün sifariş edirsiniz', tier: 'Hansı səviyyə sizi maraqlandırır', vision: 'Vizyon', pref: 'Necə əlaqə saxlamağımızı istəyirsiniz' },
+      labels: {
+        fn: 'Ad', ln: 'Soyad', email: 'E-poçt', phone: 'Telefon / WhatsApp',
+        orderFor: 'Kimin üçün sifariş edirsiniz',
+        tier: 'Nə ilə maraqlanırsınız?',
+        vision: 'Fikirləriniz',
+        visionPlaceholder: 'Hansı parça sizi maraqlandırır? Hər hansı sualınız var mı? Hər şeyi bizimlə paylaşın.',
+        pref: 'Necə əlaqə saxlamağımızı istəyirsiniz'
+      },
       forOptions: ['Özüm üçün, mən anam', 'Bir ana üçün hədiyyə olaraq'],
-      tierOptions: ['Essentia · Paslanmayan Polad', 'Aurea · Qızıl Örtüklü', 'Maison · Fərdi', 'Hələ əmin deyiləm'],
+      tierOptions: ['Essentia · Paslanmayan Metal', 'Aurea · Qızıl Örtüklü', 'Maison · Fərdi', 'Hələ əmin deyiləm'],
       prefLabels: { video: 'Video Zəng', phone: 'Telefon', email: 'E-poçt' },
       submit: 'Sorğumu Göndər', note: '48 saat ərzində, seçdiyiniz dildə cavab veririk.'
     },
@@ -131,8 +138,8 @@ export const siteContent: Record<SiteLocale, SiteCopy> = {
       whatsapp: { body: 'Sürətli suallar üçün, Azərbaycan, ingilis və ya rus dilində. İş saatlarında eyni gün cavab veririk.', link: 'WhatsApp-ı Aç' }
     },
     footer: {
-      links: ['Əsərimiz', 'Kolleksiya', 'Anaların Arxivi', 'Anaların Dairəsi', 'Məxfilik'],
-      tagline: 'Yaratdığınız hər yadigar başqa bir anaya kömək edir'
+      links: ['Missiyamız', 'Kolleksiya', 'Anaların Arxivi', 'Anaların Dairəsi', 'Məxfilik'],
+      tagline: 'Yaratdığınız hər sifariş başqa bir anaya kömək edir'
     }
   },
 
@@ -210,7 +217,14 @@ export const siteContent: Record<SiteLocale, SiteCopy> = {
         'Collection bag sent free of charge after deposit'
       ],
       formTitle: 'Schedule a consultation',
-      labels: { fn: 'First name', ln: 'Last name', email: 'Email', phone: 'Phone / WhatsApp', orderFor: 'I am ordering for', tier: 'Which tier interests you', vision: 'Tell us about your vision', pref: 'How would you like us to reach you' },
+      labels: {
+        fn: 'First name', ln: 'Last name', email: 'Email', phone: 'Phone / WhatsApp',
+        orderFor: 'I am ordering for',
+        tier: 'What interests you?',
+        vision: 'Your thoughts',
+        visionPlaceholder: 'Which piece interests you? Any questions? Share anything with us.',
+        pref: 'How would you like us to reach you'
+      },
       forOptions: ['Myself, I am the mother', 'As a gift for a mother'],
       tierOptions: ['Essentia · Stainless Steel', 'Aurea · Gold Plated', 'Maison · Bespoke', 'Not sure yet'],
       prefLabels: { video: 'Video Call', phone: 'Phone', email: 'Email' },
@@ -302,7 +316,14 @@ export const siteContent: Record<SiteLocale, SiteCopy> = {
         'Пакет для сбора отправляется бесплатно после депозита'
       ],
       formTitle: 'Записаться на консультацию',
-      labels: { fn: 'Имя', ln: 'Фамилия', email: 'Электронная почта', phone: 'Телефон / WhatsApp', orderFor: 'Я заказываю для', tier: 'Какой уровень вас интересует', vision: 'Расскажите о вашей идее', pref: 'Как вы хотите, чтобы мы с вами связались' },
+      labels: {
+        fn: 'Имя', ln: 'Фамилия', email: 'Электронная почта', phone: 'Телефон / WhatsApp',
+        orderFor: 'Я заказываю для',
+        tier: 'Что вас интересует?',
+        vision: 'Ваши мысли',
+        visionPlaceholder: 'Какое украшение вас интересует? Есть вопросы? Поделитесь с нами всем.',
+        pref: 'Как вы хотите, чтобы мы с вами связались'
+      },
       forOptions: ['Себя, я мать', 'В подарок матери'],
       tierOptions: ['Essentia · Нержавеющая сталь', 'Aurea · Позолоченное', 'Maison · На заказ', 'Пока не знаю'],
       prefLabels: { video: 'Видеозвонок', phone: 'Телефон', email: 'Эл. почта' },
