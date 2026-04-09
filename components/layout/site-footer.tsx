@@ -37,11 +37,6 @@ export function SiteFooter() {
           </ul>
         </nav>
 
-        <div className="text-[13px] leading-[1.8] text-gold/[0.35] md:text-right">
-          hello@atelierlacea.com
-          <br />
-          @atelierlacea
-        </div>
       </div>
 
       {/* Bottom row */}

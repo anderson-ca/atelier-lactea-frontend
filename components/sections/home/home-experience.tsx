@@ -40,7 +40,13 @@ export function HomeExperience() {
   const [form, setForm] = useState({ firstName: '', lastName: '', email: '', phone: '', orderFor: '', tier: '', vision: '', pref: '' });
   const set = (key: string, val: string) => setForm((p) => ({ ...p, [key]: val }));
 
-  const goTo = (id: string) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  const goTo = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      const top = el.getBoundingClientRect().top + window.scrollY - 80;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+  };
 
   return (
     <>
@@ -49,9 +55,9 @@ export function HomeExperience() {
         {/* Parallax image container */}
         <div
           ref={heroParallaxRef}
-          className="absolute right-[-5%] top-[-15%] h-[130%] w-[62%] will-change-transform max-lg:right-[-10%] max-lg:w-[80%] max-md:hidden"
+          className="absolute right-[-5%] top-[-15%] h-[130%] w-[62%] will-change-transform max-lg:right-[-10%] max-lg:w-[80%] max-md:inset-0 max-md:right-0 max-md:top-0 max-md:h-full max-md:w-full"
         >
-          <div className="hero-photo" />
+          <div className="hero-photo max-md:blur-[8px] max-md:opacity-40" />
           <div className="hero-tint" />
           <div className="hero-face-wash" />
         </div>
@@ -82,20 +88,16 @@ export function HomeExperience() {
             >
               {c.hero.btn1}
             </button>
-            <a
-              href="#mothers-archive"
-              className="inline-block border border-maroon/25 bg-transparent px-[42px] py-[15px] text-[11px] uppercase tracking-[0.28em] text-maroon transition-all duration-300 hover:border-maroon hover:bg-maroon hover:text-gold-light"
+            <button
+              type="button"
+              onClick={() => goTo('mothers-archive')}
+              className="inline-block cursor-pointer border border-maroon/25 bg-transparent px-[42px] py-[15px] text-[11px] uppercase tracking-[0.28em] text-maroon transition-all duration-300 hover:border-maroon hover:bg-maroon hover:text-gold-light"
             >
               {c.hero.btn2}
-            </a>
+            </button>
           </div>
         </div>
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-9 left-16 z-[3] flex items-center gap-3 text-[9px] uppercase tracking-[0.3em] text-text-soft max-md:hidden">
-          {c.hero.scroll}
-          <span className="block h-px w-10 bg-gold/40" />
-        </div>
       </section>
 
       {/* ═══════════════════ FOCUS (What We Do) ═══════════════════ */}
@@ -229,7 +231,7 @@ export function HomeExperience() {
               {c.archive.title1}<br />{c.archive.title2}
             </h2>
           </div>
-          <a href="/archive" className="border-b border-gold/40 pb-[3px] text-[11px] uppercase tracking-[0.22em] text-gold transition-opacity hover:opacity-60">
+          <a href="#mothers-archive" className="border-b border-gold/40 pb-[3px] text-[11px] uppercase tracking-[0.22em] text-gold transition-opacity hover:opacity-60">
             {c.archive.link}
           </a>
         </div>
@@ -269,7 +271,7 @@ export function HomeExperience() {
 
             <div className="flex flex-col gap-9 border-l border-gold/[0.12] pl-10 md:pl-16">
               <div>
-                <div className="mb-[7px] text-[52px] font-light italic leading-none text-gold">10%</div>
+                <div className="mb-[7px] text-[52px] font-light italic leading-none text-gold">5%</div>
                 <div className="mb-2 text-[11px] uppercase tracking-whisper text-gold/60">{c.circle.stat1Label}</div>
                 <p className="text-sm font-light leading-[1.78] text-gold/[0.32]">{c.circle.stat1Body}</p>
               </div>
@@ -415,7 +417,7 @@ export function HomeExperience() {
             <div className="mb-4 text-[22px] text-gold/[0.55]">&#9830;</div>
             <div className="mb-[10px] text-base font-normal text-maroon">WhatsApp</div>
             <p className="mb-[18px] text-sm font-light leading-[1.78] text-text-soft">{c.contact.whatsapp.body}</p>
-            <a href="#"
+            <a href="https://wa.me/9942162835437" target="_blank" rel="noopener noreferrer"
               className="border-b border-gold/35 pb-[3px] text-[10px] uppercase tracking-[0.2em] text-gold transition-opacity hover:opacity-60">
               {c.contact.whatsapp.link}
             </a>

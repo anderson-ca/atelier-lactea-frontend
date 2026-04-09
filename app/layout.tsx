@@ -20,8 +20,11 @@ const body = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: 'Atelier Lactéa — Maison d\u2019Héritage',
-  description: 'Breastmilk preserved into handcrafted heirloom jewelry. A mother\u2019s first sacrifice, worn forever.'
+  title: 'Atelier Lactéa \u00B7 Maison d\u2019Héritage',
+  description: 'Breastmilk preserved into handcrafted heirloom jewelry. A mother\u2019s first sacrifice, worn forever.',
+  icons: {
+    icon: '/images/Favicon.png'
+  }
 };
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {

@@ -59,14 +59,14 @@ export const siteContent: Record<SiteLocale, SiteCopy> = {
     focus: {
       eyebrow: 'Nə edirik',
       title1: 'Ana südü,', title2: 'əbədi qorunur',
-      lead: 'Atelier Lactéa ana südünü incə əl işçiliyi ilə əbədi bir zinət əşyasına çevirir. Hər parça analığın ən həssas dövrünü — o təkrar olunmaz yaxınlığı, o ilk ayları — gələcəyə daşımaq üçün yaradılır. Bu, sadəcə bəzək deyil. Nəsildən-nəslə ötürülən, hər dəfə taxılanda o dövrü yenidən hiss etdirən bir yadigardır.',
-      note: 'Ana südü vermisinizsə, bu sizin üçündür. Verməmisinizsə, bu yenə də sizin üçündür. Körpə saçı, doğum daşı və ya hər ikisi — analığın ilk izi, seçdiyiniz formada qorunur.'
+      lead: 'Atelier Lactéa ana südünü incə əl işçiliyi ilə əbədi bir zinət əşyasına çevirir. Hər parça analığın ən həssas dövrünü, o təkrar olunmaz yaxınlığı, o ilk ayları gələcəyə daşımaq üçün yaradılır. Bu, sadəcə bəzək deyil. Nəsildən-nəslə ötürülən, hər dəfə taxılanda o dövrü yenidən hiss etdirən bir yadigardır.',
+      note: 'Ana südü vermisinizsə, bu sizin üçündür. Verməmisinizsə, bu yenə də sizin üçündür. Körpə saçı, doğum daşı və ya hər ikisi: analığın ilk izi, seçdiyiniz formada qorunur.'
     },
     ext: {
       eyebrow: 'Əlavə materiallar', title: 'Analığın hər dövrü üçün',
       intro: 'Ana südü etdiyimiz işin özəyidir. Lakin bu təcrübə hər kəs üçün özünəməxsusdur və bu xüsusi anı əbədiləşdirmək üçün eyni dərinliyə sahib Əlavə seçimlər təklif edirik.',
       items: [
-        { name: 'Körpə Saçı', subtitle: 'Körpənizin o ilk əvəzolunmaz teli', desc: 'O ilk tel — incə, xüsusi və körpənizin dünyaya gəlişinin ən erkən fiziki izi. Seçdiyiniz parçaya həkk olunaraq həmişəlik sizinlə qalır.' },
+        { name: 'Körpə Saçı', subtitle: 'Körpənizin o ilk əvəzolunmaz teli', desc: 'O ilk tel: incə, xüsusi və körpənizin dünyaya gəlişinin ən erkən fiziki izi. Seçdiyiniz parçaya həkk olunaraq həmişəlik sizinlə qalır.' },
         { name: 'Doğum Daşı', subtitle: 'Tək və ya ana südü ilə birlikdə', desc: 'Uşağınızın doğulduğu ayın daşı. Ana südü ilə birlikdə və ya ayrıca, həm o günü, həm də o sevgini əbədiləşdirir.' },
         { name: 'Qarışıq', subtitle: 'İki və ya daha çox material', desc: 'Ana südü və körpə saçı. Ana südü və doğum daşı. Hər üçü birlikdə. Hər element eyni məhəbbətin fərqli bir qatını daşıyır.' }
       ]
@@ -75,7 +75,7 @@ export const siteContent: Record<SiteLocale, SiteCopy> = {
       eyebrow: 'Kolleksiya', title: 'Hər ana üçün bir yadigar',
       note: 'Üç ifadə, bir məqsəd. Bu dövrü qorumaq hər ananın haqqıdır. Hər biri fərdi konsultasiya və eyni sənətkarlıq həssaslığı ilə başlayır.',
       items: [
-        { mat: 'Paslanmayan Metal', desc: 'Analığın ilk dövrünün ən xüsusi xatirəsi — ana südünüz, əl ilə hazırlanmış zərif bir zinət əşyasına çevrilir. Hazır formalar arasından seçdiyiniz pendant, yalnız sizin hekayənizi daşıyır.', tag: 'İndi və həmişə' },
+        { mat: 'Paslanmayan Metal', desc: 'Analığın ilk dövrünün ən xüsusi xatirəsi. Ana südünüz, əl ilə hazırlanmış zərif bir zinət əşyasına çevrilir. Hazır formalar arasından seçdiyiniz pendant, yalnız sizin hekayənizi daşıyır.', tag: 'İndi və həmişə' },
         { mat: 'Qızıl Örtüklü', desc: 'Essentia-nın bütün zərifliyi, qızılın istiliyi ilə. Ana südünüz, parıltılı və isti bir parçada əbədiləşir. Hazır formalar arasından seçilir və xatirələrdə qalır.', tag: 'Qiymətli bir hədiyyə' },
         { mat: 'Fərdi · Əl İşi', desc: 'Maison tamamilə başqadır, sizin üçün sıfırdan yaradılan bir əsər. Xüsusi konsultasiyalarda sizinlə birlikdə hər detala qərar verilir, hamısı ən dəyərli metallar ilə yalnız sizin hekayənizə uyğun hazırlanır. Heç bir başqa Maison əsəri eyni olmayacaq.', tag: 'Yalnız sizin üçün' }
       ]
@@ -88,7 +88,7 @@ export const siteContent: Record<SiteLocale, SiteCopy> = {
         { name: 'Konsultasiya', detail: 'WhatsApp, video və ya telefon vasitəsilə sizinlə əlaqə saxlayır, hekayənizi və vizyonunuzu öyrənir, sizi ən uyğun ifadəyə və formaya yönləndiririk.' },
         { name: 'Dizayn və Depozit', detail: 'Hazır olduğunuzda depozit sifarişinizi təsdiqləyir. Birlikdə dizaynı dəqiqləşdiririk. Essentia və Aurea üçün mövcud formalardan seçirsiniz, Maison üçün isə tamamilə orijinal bir əsər yaradırıq. Depozit yekun məbləğə daxil edilir. Sifariş ləğv edildiyi təqdirdə depozit geri qaytarılmır.' },
         { name: 'Materialın Toplanması', detail: 'Dizayn təsdiqləndikdən və depozit ödəndikdən sonra sizə ABŞ-dan gətirilmiş steril tibbi süd saxlama konteynerləri təqdim edilir, pulsuz olaraq. Hazır olduğunuzda südü tarix və ad qeyd edərək geri göndərirsiniz. Qalan hər şey bizdədir.', note: 'Steril tibbi konteyner pulsuz təqdim edilir' },
-        { name: 'Əl İşi', detail: 'Parçanız seçdiyiniz metalla əllə hazırlanır. Hazırlanma müddəti sifarişin mürəkkəbliyinə görə dəyişir — sizi hər mərhələdə məlumatlandırır və dəqiq hazırlanma cədvəli ilə təmin edirik.' },
+        { name: 'Əl İşi', detail: 'Parçanız seçdiyiniz metalla əllə hazırlanır. Hazırlanma müddəti sifarişin mürəkkəbliyinə görə dəyişir. Sizi hər mərhələdə məlumatlandırır və dəqiq hazırlanma cədvəli ilə təmin edirik.' },
         { name: 'Təhvil', detail: 'Parçanız Atelier Lactéa qablaşdırmasında çatdırılır. Bu gün açılacaq, nəsillər boyu daşınacaq.' }
       ]
     },
@@ -104,7 +104,7 @@ export const siteContent: Record<SiteLocale, SiteCopy> = {
     circle: {
       eyebrow: 'Anaların Dairəsi',
       title1: 'Yaratdığınız hər sifariş', title2: 'başqa bir anaya kömək edir',
-      body: 'Hər Atelier Lactéa alışının 10 faizi birbaşa ehtiyacı olan analara gedir. Qida, gündəlik ehtiyaclar və çətin vəziyyətdə olan analar üçün. Hər ay, tam şəffaflıqla.',
+      body: 'Hər Atelier Lactéa alışının 5 faizi birbaşa ehtiyacı olan analara gedir. Qida, gündəlik ehtiyaclar və çətin vəziyyətdə olan analar üçün. Hər ay, tam şəffaflıqla.',
       stat1Label: 'Hər alışdan, hər ay', stat1Body: 'Ehtiyacı olan analara birbaşa çatır. İstisna yoxdur.',
       stat2Num1: 'Aylıq', stat2Num2: 'hesabat', stat2Label: 'Tam şəffaflıq', stat2Body: 'Hər töhfənin hara getdiyini hər ay açıq şəkildə paylaşırıq.'
     },
@@ -112,8 +112,8 @@ export const siteContent: Record<SiteLocale, SiteCopy> = {
       eyebrow: 'Buradan başlayın', title1: 'Sifarişiniz bir', title2: 'söhbətlə başlayır',
       body: 'Özünüz və təsəvvür etdiyiniz parça haqqında bizə məlumat verin. 48 saat ərzində fərdi konsultasiyanızı planlamaq üçün sizinlə əlaqə saxlayacağıq.',
       points: [
-        'Pulsuz — ilk konsultasiya üçün heç bir ödəniş tələb olunmur',
-        'Məxfi — hekayəniz yalnız bizdə qalır',
+        'Pulsuz. İlk konsultasiya üçün heç bir ödəniş tələb olunmur',
+        'Məxfi. Hekayəniz yalnız bizdə qalır',
         'Azərbaycan, ingilis və rus dillərində mövcuddur',
         'Sifarişiniz təsdiqləndikdən sonra steril tibbi süd saxlama konteynerlərinizi ünvanınıza pulsuz çatdırırıq'
       ],
@@ -126,7 +126,7 @@ export const siteContent: Record<SiteLocale, SiteCopy> = {
         visionPlaceholder: 'Hansı parça sizi maraqlandırır? Hər hansı sualınız var mı? Hər şeyi bizimlə paylaşın.',
         pref: 'Necə əlaqə saxlamağımızı istəyirsiniz'
       },
-      forOptions: ['Özüm üçün, mən anam', 'Bir ana üçün hədiyyə olaraq'],
+      forOptions: ['Özüm ücün', 'Bir ana üçün hədiyyə olaraq'],
       tierOptions: ['Essentia · Paslanmayan Metal', 'Aurea · Qızıl Örtüklü', 'Maison · Fərdi', 'Hələ əmin deyiləm'],
       prefLabels: { video: 'Video Zəng', phone: 'Telefon', email: 'E-poçt' },
       submit: 'Sorğumu Göndər', note: '48 saat ərzində, seçdiyiniz dildə cavab veririk.'
@@ -152,7 +152,7 @@ export const siteContent: Record<SiteLocale, SiteCopy> = {
     hero: {
       h1: 'The earliest bond,',
       h1Strong: 'preserved forever',
-      lead: "The first months of motherhood do not come twice. Atelier Lactéa preserves this most precious time in a delicate jewel made from breastmilk — a deeply personal heirloom you can carry close, every single day.",
+      lead: "The first months of motherhood do not come twice. Atelier Lactéa preserves this most precious time in a delicate jewel made from breastmilk, a deeply personal heirloom you can carry close, every single day.",
       btn1: 'Begin Your Consultation', btn2: "View the Mother's Archive", scroll: 'Scroll'
     },
     focus: {
@@ -203,7 +203,7 @@ export const siteContent: Record<SiteLocale, SiteCopy> = {
     circle: {
       eyebrow: "The Mother's Circle",
       title1: 'Every heirloom you create', title2: 'helps another mother',
-      body: '10% of every Atelier Lactéa purchase goes directly to mothers in need. Food, diapers, and safe refuge for women and children in vulnerable situations, including those in abusive households. Every month, transparently reported.',
+      body: '5% of every Atelier Lactéa purchase goes directly to mothers in need. Food, diapers, and safe refuge for women and children in vulnerable situations, including those in abusive households. Every month, transparently reported.',
       stat1Label: 'Of every purchase, every month', stat1Body: 'Goes to mothers facing food insecurity, housing instability, and domestic abuse. No exceptions.',
       stat2Num1: 'Monthly', stat2Num2: 'report', stat2Label: 'Full transparency', stat2Body: 'We publish a monthly report so every client knows exactly where their contribution went.'
     },
@@ -251,22 +251,22 @@ export const siteContent: Record<SiteLocale, SiteCopy> = {
     hero: {
       h1: 'Это время уходит.',
       h1Strong: 'Память остаётся с вами.',
-      lead: 'Первые месяцы материнства не повторяются. Atelier Lactéa сохраняет этот самый ценный период в изысканном украшении из грудного молока — глубоко личной реликвии, которую вы можете носить рядом с собой каждый день.',
+      lead: 'Первые месяцы материнства не повторяются. Atelier Lactéa сохраняет этот самый ценный период в изысканном украшении из грудного молока, глубоко личной реликвии, которую вы можете носить рядом с собой каждый день.',
       btn1: 'Начать консультацию', btn2: 'Смотреть Архив Матери', scroll: 'Вниз'
     },
     focus: {
       eyebrow: 'Наша миссия',
       title1: 'Грудное молоко,', title2: 'сохранённое навсегда',
       lead: 'Atelier Lactéa превращает грудное молоко в украшение ручной работы, созданное на всю жизнь. Каждое изделие рождается, чтобы запечатлеть самую нежную главу материнства в чём-то хрупком, личном и незабываемом. Это не просто украшение. Это самый трепетный и ценный период жизни матери, бережно переданный будущим поколениям.',
-      note: 'Кормили грудью? Это для вас. Не кормили? Вы тоже здесь желанны. С прядью волос малыша, камнем рождения или их сочетанием — каждая мать может сохранить самую раннюю главу жизни своего ребёнка.'
+      note: 'Кормили грудью? Это для вас. Не кормили? Вы тоже здесь желанны. С прядью волос малыша, камнем рождения или их сочетанием каждая мать может сохранить самую раннюю главу жизни своего ребёнка.'
     },
     ext: {
       eyebrow: 'Дополнительные материалы', title: 'Для каждой главы материнства',
-      intro: 'Грудное молоко — это сердце того, что мы делаем. Но для мам, которые не кормили грудью или больше не сохранили молоко, мы предлагаем альтернативы с той же глубиной смысла.',
+      intro: 'Грудное молоко это сердце того, что мы делаем. Но для мам, которые не кормили грудью или больше не сохранили молоко, мы предлагаем альтернативы с той же глубиной смысла.',
       items: [
-        { name: 'Волосы малыша', subtitle: 'Каждый ребёнок оставляет свой след', desc: 'Первая прядь, вплавленная в выбранное вами украшение. Незаменимая и невероятно нежная — самый ранний физический след вашего ребёнка.' },
-        { name: 'Камень рождения', subtitle: 'Свет того дня, сохранённый сегодня', desc: 'Камень месяца, в котором родился ваш ребёнок. Вместе с сохранённым молоком или отдельно — он увековечивает и тот день, и ту любовь.' },
-        { name: 'Сочетание', subtitle: 'Несколько воспоминаний в одном изделии', desc: 'Молоко и волосы малыша. Молоко и камень рождения. Все три вместе. Каждый элемент — отдельный слой одной и той же любви.' }
+        { name: 'Волосы малыша', subtitle: 'Каждый ребёнок оставляет свой след', desc: 'Первая прядь, вплавленная в выбранное вами украшение. Незаменимая и невероятно нежная, самый ранний физический след вашего ребёнка.' },
+        { name: 'Камень рождения', subtitle: 'Свет того дня, сохранённый сегодня', desc: 'Камень месяца, в котором родился ваш ребёнок. Вместе с сохранённым молоком или отдельно, он увековечивает и тот день, и ту любовь.' },
+        { name: 'Сочетание', subtitle: 'Несколько воспоминаний в одном изделии', desc: 'Молоко и волосы малыша. Молоко и камень рождения. Все три вместе. Каждый элемент это отдельный слой одной и той же любви.' }
       ]
     },
     tiers: {
@@ -281,7 +281,7 @@ export const siteContent: Record<SiteLocale, SiteCopy> = {
     process: {
       intro: 'Здесь ничего не торопят. Каждую маму бережно сопровождают на каждом шагу.',
       title1: 'От мечты', title2: 'к реликвии',
-      tagline: 'Каждая реликвия начинается с личной консультации. Всё, что следует дальше — это вдумчивый, неторопливый процесс, выстроенный целиком вокруг вас.',
+      tagline: 'Каждая реликвия начинается с личной консультации. Всё, что следует дальше, это вдумчивый, неторопливый процесс, выстроенный целиком вокруг вас.',
       steps: [
         { name: 'Консультация', detail: 'Личная беседа через WhatsApp, видео или по телефону, на вашем языке. Мы узнаём вашу историю и ваши пожелания, и помогаем выбрать подходящий уровень и форму.' },
         { name: 'Дизайн и депозит', detail: 'Когда вы будете готовы, депозит подтверждает ваш заказ. Вместе мы уточняем дизайн. Для Essentia и Aurea вы выбираете из наших готовых форм. Для Maison мы создаём полностью оригинальное изделие вместе с вами.' },
@@ -302,7 +302,7 @@ export const siteContent: Record<SiteLocale, SiteCopy> = {
     circle: {
       eyebrow: 'Круг Матерей',
       title1: 'Каждая созданная вами реликвия', title2: 'помогает другой матери',
-      body: '10% от каждой покупки Atelier Lactéa идут напрямую нуждающимся матерям. Еда, подгузники и безопасное укрытие для женщин и детей в уязвимом положении, в том числе переживающих домашнее насилие. Каждый месяц, с полным отчётом.',
+      body: '5% от каждой покупки Atelier Lactéa идут напрямую нуждающимся матерям. Еда, подгузники и безопасное укрытие для женщин и детей в уязвимом положении, в том числе переживающих домашнее насилие. Каждый месяц, с полным отчётом.',
       stat1Label: 'От каждой покупки, каждый месяц', stat1Body: 'Идут матерям, столкнувшимся с нехваткой питания, нестабильностью жилья и домашним насилием. Без исключений.',
       stat2Num1: 'Ежемесячный', stat2Num2: 'отчёт', stat2Label: 'Полная прозрачность', stat2Body: 'Мы публикуем ежемесячный отчёт, чтобы каждый клиент знал, куда именно пошёл его вклад.'
     },
