@@ -18,14 +18,7 @@ export function SiteHeader() {
   return (
     <header className="fixed inset-x-0 top-0 z-[200] flex items-center justify-between border-b border-gold/25 bg-ivory/[0.96] px-6 py-5 backdrop-blur-md md:px-16">
       {/* Brand */}
-      <a
-        href="#"
-        className="text-center"
-        onClick={(e) => {
-          e.preventDefault();
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }}
-      >
+      <a href="#hero" className="text-center">
         <div className="text-[15px] font-normal uppercase tracking-[0.3em] text-maroon">
           Atelier Lact&eacute;a
         </div>

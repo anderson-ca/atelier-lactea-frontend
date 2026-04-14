@@ -1,6 +1,7 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
+import { useEffect, useRef } from 'react';
 
 import { useLanguage } from '@/lib/language-context';
 import { siteContent } from '@/lib/site-content';
@@ -36,10 +37,6 @@ export function HomeExperience() {
     return () => obs.disconnect();
   }, []);
 
-  /* ── Form state ── */
-  const [form, setForm] = useState({ firstName: '', lastName: '', email: '', phone: '', orderFor: '', tier: '', vision: '', pref: '' });
-  const set = (key: string, val: string) => setForm((p) => ({ ...p, [key]: val }));
-
   const goTo = (id: string) => {
     const el = document.getElementById(id);
     if (el) {
@@ -51,7 +48,7 @@ export function HomeExperience() {
   return (
     <>
       {/* ═══════════════════ HERO ═══════════════════ */}
-      <section className="relative flex min-h-screen items-center overflow-hidden bg-ivory">
+      <section id="hero" className="relative flex min-h-screen items-center overflow-hidden bg-ivory">
         {/* Parallax image container */}
         <div
           ref={heroParallaxRef}
@@ -237,23 +234,32 @@ export function HomeExperience() {
         </div>
 
         {/* Archive cards */}
-        <div className="grid grid-cols-1 gap-px bg-gold/15 md:grid-cols-3">
-          {c.archive.items.map((item, i) => (
-            <div key={item.name} className={`min-h-[380px] ${i === 1 ? 'bg-[#4d0d15]' : 'bg-maroon'}`}>
-              <div className="flex h-full w-full flex-col justify-between p-10 md:p-12">
-                <div className="mb-8 text-[52px] font-light italic leading-none tracking-[-2px] text-gold/15">
-                  AL
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+          {c.archive.items.map((item, i) => {
+            const images = ['/images/Product reviews/Leyla.png', '/images/Product reviews/Aynur.png', '/images/Product reviews/Nigar.png'];
+            return (
+              <div key={item.name} className="grid overflow-hidden bg-maroon" style={{ gridTemplateRows: '2fr 1fr' }}>
+                {/* Image — top 2/3 */}
+                <div className="relative overflow-hidden">
+                  <Image
+                    src={images[i]}
+                    alt={item.name}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover object-[center_45%]"
+                  />
                 </div>
-                <div>
-                  <div className="mb-3 text-[9px] uppercase tracking-[0.24em] text-gold/50">{item.tier}</div>
-                  <div className="mb-4 text-[22px] italic font-normal text-gold-light">{item.name}</div>
-                  <p className="text-base italic leading-[1.75] text-gold/65">
+                {/* Text — bottom 1/3 */}
+                <div className="flex flex-col justify-center px-8 py-6 md:px-10">
+                  <div className="mb-2 text-[9px] uppercase tracking-[0.24em] text-gold/45">{item.tier}</div>
+                  <div className="mb-3 text-[22px] italic font-normal text-gold-light">{item.name}</div>
+                  <p className="text-[15px] italic leading-[1.72] text-gold/55">
                     &ldquo;{item.story}&rdquo;
                   </p>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
 
@@ -287,100 +293,20 @@ export function HomeExperience() {
         </div>
       </section>
 
-      {/* ═══════════════════ CONSULTATION FORM ═══════════════════ */}
-      <section className="reveal bg-ivory px-6 py-[100px] md:px-16" id="consult">
-        <div className="mx-auto grid max-w-[1200px] grid-cols-1 items-start gap-16 md:grid-cols-2 md:gap-20">
-          {/* Left column */}
-          <div>
-            <div className="mb-[14px] text-[10px] uppercase tracking-[0.36em] text-gold">{c.consult.eyebrow}</div>
-            <h2 className="mb-[18px] text-[44px] font-light italic leading-[1.12] text-maroon max-md:text-[30px]">
-              {c.consult.title1}<br />{c.consult.title2}
-            </h2>
-            <p className="mb-7 text-[17px] font-light leading-[1.85] text-text-mid">{c.consult.body}</p>
-            <div className="flex flex-col gap-[14px]">
-              {c.consult.points.map((point) => (
-                <div key={point} className="flex items-start gap-[14px] text-base leading-[1.65] text-text-mid">
-                  <span className="-mt-px shrink-0 text-[22px] leading-none text-gold">&middot;</span>
-                  {point}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Form card */}
-          <div className="border border-gold/[0.18] bg-ivory-2 p-10 md:p-12">
-            <div className="mb-[30px] text-xl font-light italic text-maroon">{c.consult.formTitle}</div>
-
-            <div className="mb-6 grid grid-cols-1 gap-5 md:grid-cols-2">
-              <div>
-                <label className="mb-[9px] block text-[10px] uppercase tracking-[0.24em] text-text-soft">{c.consult.labels.fn}</label>
-                <input type="text" value={form.firstName} onChange={(e) => set('firstName', e.target.value)}
-                  className="w-full border-b border-gold/35 bg-transparent pb-[9px] pt-[9px] text-[15px] font-light text-text-dark outline-none transition-colors focus:border-maroon" />
-              </div>
-              <div>
-                <label className="mb-[9px] block text-[10px] uppercase tracking-[0.24em] text-text-soft">{c.consult.labels.ln}</label>
-                <input type="text" value={form.lastName} onChange={(e) => set('lastName', e.target.value)}
-                  className="w-full border-b border-gold/35 bg-transparent pb-[9px] pt-[9px] text-[15px] font-light text-text-dark outline-none transition-colors focus:border-maroon" />
-              </div>
-            </div>
-
-            <div className="mb-6">
-              <label className="mb-[9px] block text-[10px] uppercase tracking-[0.24em] text-text-soft">{c.consult.labels.email}</label>
-              <input type="email" value={form.email} onChange={(e) => set('email', e.target.value)}
-                className="w-full border-b border-gold/35 bg-transparent pb-[9px] pt-[9px] text-[15px] font-light text-text-dark outline-none transition-colors focus:border-maroon" />
-            </div>
-
-            <div className="mb-6">
-              <label className="mb-[9px] block text-[10px] uppercase tracking-[0.24em] text-text-soft">{c.consult.labels.phone}</label>
-              <input type="tel" value={form.phone} onChange={(e) => set('phone', e.target.value)}
-                className="w-full border-b border-gold/35 bg-transparent pb-[9px] pt-[9px] text-[15px] font-light text-text-dark outline-none transition-colors focus:border-maroon" />
-            </div>
-
-            <div className="mb-6">
-              <label className="mb-[9px] block text-[10px] uppercase tracking-[0.24em] text-text-soft">{c.consult.labels.orderFor}</label>
-              <select value={form.orderFor} onChange={(e) => set('orderFor', e.target.value)}
-                className="w-full cursor-pointer border-b border-gold/35 bg-transparent pb-[9px] pt-[9px] text-[15px] font-light text-text-dark outline-none">
-                {c.consult.forOptions.map((opt) => <option key={opt}>{opt}</option>)}
-              </select>
-            </div>
-
-            <div className="mb-6">
-              <label className="mb-[9px] block text-[10px] uppercase tracking-[0.24em] text-text-soft">{c.consult.labels.tier}</label>
-              <select value={form.tier} onChange={(e) => set('tier', e.target.value)}
-                className="w-full cursor-pointer border-b border-gold/35 bg-transparent pb-[9px] pt-[9px] text-[15px] font-light text-text-dark outline-none">
-                {c.consult.tierOptions.map((opt) => <option key={opt}>{opt}</option>)}
-              </select>
-            </div>
-
-            <div className="mb-6">
-              <label className="mb-[9px] block text-[10px] uppercase tracking-[0.24em] text-text-soft">{c.consult.labels.vision}</label>
-              <textarea value={form.vision} onChange={(e) => set('vision', e.target.value)} rows={3}
-  placeholder={c.consult.labels.visionPlaceholder}
-  className="w-full resize-none border-b border-gold/35 bg-transparent pb-[9px] pt-[9px] text-[15px] font-light text-text-dark outline-none transition-colors focus:border-maroon" />
-            </div>
-
-            {/* Contact preference */}
-            <label className="mb-3 block text-[10px] uppercase tracking-[0.24em] text-text-soft">{c.consult.labels.pref}</label>
-            <div className="mb-7 flex flex-wrap gap-4">
-              {(['wa', 'video', 'phone', 'email'] as const).map((val) => {
-                const labels: Record<string, string> = { wa: 'WhatsApp', video: c.consult.prefLabels.video, phone: c.consult.prefLabels.phone, email: c.consult.prefLabels.email };
-                return (
-                  <label key={val} className="flex cursor-pointer items-center gap-2 text-[15px] text-text-mid">
-                    <input type="radio" name="pref" value={val} checked={form.pref === val} onChange={(e) => set('pref', e.target.value)}
-                      className="accent-maroon" />
-                    {labels[val]}
-                  </label>
-                );
-              })}
-            </div>
-
-            <button
-              type="button"
-              className="w-full cursor-pointer border-none bg-maroon px-4 py-[18px] text-[11px] uppercase tracking-[0.28em] text-gold-light transition-all duration-300 hover:bg-gold hover:text-maroon"
-            >
-              {c.consult.submit}
-            </button>
-            <p className="mt-[14px] text-center text-[13px] italic text-text-soft">{c.consult.note}</p>
+      {/* ═══════════════════ CONSULTATION ═══════════════════ */}
+      <section className="reveal bg-ivory px-6 py-16 md:py-24" id="consult">
+        <div className="mx-auto max-w-[680px] text-center">
+          <div className="mb-[14px] text-[10px] uppercase tracking-[0.36em] text-gold">{c.consult.eyebrow}</div>
+          <h2 className="mb-[18px] text-[44px] font-light italic leading-[1.12] text-maroon max-md:text-[30px]">
+            {c.consult.title1}<br />{c.consult.title2}
+          </h2>
+          <p className="mb-8 text-[17px] font-light leading-[1.85] text-text-mid">{c.consult.body}</p>
+          <div className="mt-2 flex flex-col items-center gap-2">
+            {c.consult.points.map((point) => (
+              <p key={point} className="text-[15px] leading-[1.75] text-text-mid">
+                <span className="text-gold/60">&middot;&ensp;</span>{point}
+              </p>
+            ))}
           </div>
         </div>
       </section>
@@ -393,32 +319,42 @@ export function HomeExperience() {
         </div>
         <div className="mx-auto grid max-w-[900px] grid-cols-1 gap-px bg-gold/[0.12] md:grid-cols-3">
           {/* Email */}
-          <div className="bg-ivory-2 p-9 text-center md:p-11">
-            <div className="mb-4 text-[22px] text-gold/[0.55]">&#9993;</div>
+          <div className="flex flex-col items-center bg-ivory-2 p-9 text-center md:p-11">
+            <svg className="mb-5 h-6 w-6 text-gold/50" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2">
+              <rect x="2" y="4" width="20" height="16" rx="2" />
+              <path d="M2 4l10 8 10-8" />
+            </svg>
             <div className="mb-[10px] text-base font-normal text-maroon">{c.contact.email.name}</div>
-            <p className="mb-[18px] text-sm font-light leading-[1.78] text-text-soft">{c.contact.email.body}</p>
+            <p className="mb-auto text-sm font-light leading-[1.78] text-text-soft">{c.contact.email.body}</p>
             <a href="mailto:hello@atelierlactea.com"
-              className="border-b border-gold/35 pb-[3px] text-[10px] uppercase tracking-[0.2em] text-gold transition-opacity hover:opacity-60">
+              className="mt-5 border-b border-gold/35 pb-[3px] text-[10px] uppercase tracking-[0.2em] text-gold transition-opacity hover:opacity-60">
               hello@atelierlactea.com
             </a>
           </div>
           {/* Instagram */}
-          <div className="bg-ivory-2 p-9 text-center md:p-11">
-            <div className="mb-4 text-[22px] text-gold/[0.55]">&#9900;</div>
+          <div className="flex flex-col items-center bg-ivory-2 p-9 text-center md:p-11">
+            <svg className="mb-5 h-6 w-6 text-gold/50" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2">
+              <rect x="2" y="2" width="20" height="20" rx="5" />
+              <circle cx="12" cy="12" r="5" />
+              <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none" />
+            </svg>
             <div className="mb-[10px] text-base font-normal text-maroon">Instagram</div>
-            <p className="mb-[18px] text-sm font-light leading-[1.78] text-text-soft">{c.contact.instagram.body}</p>
+            <p className="mb-auto text-sm font-light leading-[1.78] text-text-soft">{c.contact.instagram.body}</p>
             <a href="https://instagram.com/atelierlactea" target="_blank" rel="noopener noreferrer"
-              className="border-b border-gold/35 pb-[3px] text-[10px] uppercase tracking-[0.2em] text-gold transition-opacity hover:opacity-60">
+              className="mt-5 border-b border-gold/35 pb-[3px] text-[10px] uppercase tracking-[0.2em] text-gold transition-opacity hover:opacity-60">
               @atelierlactea
             </a>
           </div>
           {/* WhatsApp */}
-          <div className="bg-ivory-2 p-9 text-center md:p-11">
-            <div className="mb-4 text-[22px] text-gold/[0.55]">&#9830;</div>
+          <div className="flex flex-col items-center bg-ivory-2 p-9 text-center md:p-11">
+            <svg className="mb-5 h-6 w-6 text-gold/50" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2">
+              <path d="M12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.5A10 10 0 1 0 12 2z" />
+              <path d="M8.5 10.5c.3-.9.7-1.5 1.2-1.7.5-.2.9 0 1.1.3l.4.7c.2.3.1.7-.1.9l-.5.5c.5.9 1.1 1.6 2 2l.5-.5c.2-.2.6-.3.9-.1l.7.4c.3.2.5.6.3 1.1-.2.5-.8.9-1.7 1.2-.9.2-2.4-.4-3.6-1.7-1.2-1.3-1.6-2.5-1.2-3.1z" />
+            </svg>
             <div className="mb-[10px] text-base font-normal text-maroon">WhatsApp</div>
-            <p className="mb-[18px] text-sm font-light leading-[1.78] text-text-soft">{c.contact.whatsapp.body}</p>
+            <p className="mb-auto text-sm font-light leading-[1.78] text-text-soft">{c.contact.whatsapp.body}</p>
             <a href="https://wa.me/9942162835437" target="_blank" rel="noopener noreferrer"
-              className="border-b border-gold/35 pb-[3px] text-[10px] uppercase tracking-[0.2em] text-gold transition-opacity hover:opacity-60">
+              className="mt-5 border-b border-gold/35 pb-[3px] text-[10px] uppercase tracking-[0.2em] text-gold transition-opacity hover:opacity-60">
               {c.contact.whatsapp.link}
             </a>
           </div>
