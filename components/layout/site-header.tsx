@@ -1,7 +1,5 @@
 'use client';
 
-import Link from 'next/link';
-
 import { useLanguage, type SiteLocale } from '@/lib/language-context';
 import { siteContent } from '@/lib/site-content';
 import { MobileMenu } from '@/components/layout/mobile-menu';
@@ -20,13 +18,12 @@ export function SiteHeader() {
   return (
     <header className="fixed inset-x-0 top-0 z-[200] flex items-center justify-between border-b border-gold/25 bg-ivory/[0.96] px-6 py-5 backdrop-blur-md md:px-16">
       {/* Brand */}
-      <Link
-        href="/"
+      <a
+        href="#"
         className="text-center"
         onClick={(e) => {
           e.preventDefault();
           window.scrollTo({ top: 0, behavior: 'smooth' });
-          window.history.pushState(null, '', '/');
         }}
       >
         <div className="text-[15px] font-normal uppercase tracking-[0.3em] text-maroon">
@@ -38,7 +35,7 @@ export function SiteHeader() {
         <div className="text-[7.5px] italic tracking-[0.18em] text-gold/50">
           Est. 2026
         </div>
-      </Link>
+      </a>
 
       {/* Desktop nav */}
       <nav className="hidden xl:block">
