@@ -49,7 +49,6 @@ export function HomeExperience() {
     <>
       {/* ═══════════════════ HERO ═══════════════════ */}
       <section id="hero" className="relative flex min-h-screen items-center overflow-hidden bg-ivory">
-        {/* Parallax image container */}
         <div
           ref={heroParallaxRef}
           className="absolute right-[-5%] top-[-15%] h-[130%] w-[62%] will-change-transform max-lg:right-[-10%] max-lg:w-[80%] max-md:inset-0 max-md:right-0 max-md:top-0 max-md:h-full max-md:w-full"
@@ -60,7 +59,6 @@ export function HomeExperience() {
         </div>
         <div className="hero-fade max-md:hidden" />
 
-        {/* Content */}
         <div className="relative z-[3] px-6 pb-[100px] pt-[140px] md:px-16" style={{ maxWidth: 560 }}>
           <div className="mb-7 flex items-center gap-[14px] text-[10px] uppercase tracking-[0.38em] text-gold">
             <span className="block h-px w-7 bg-gold" />
@@ -94,7 +92,6 @@ export function HomeExperience() {
             </button>
           </div>
         </div>
-
       </section>
 
       {/* ═══════════════════ FOCUS (What We Do) ═══════════════════ */}
@@ -109,6 +106,55 @@ export function HomeExperience() {
           <p className="border-l-[1.5px] border-gold/40 py-5 pl-6 text-base italic leading-[1.75] text-text-soft">
             {c.focus.note}
           </p>
+        </div>
+      </section>
+
+      {/* ═══════════════════ ARCHIVE QUOTE STRIP ═══════════════════ */}
+      <div className="reveal bg-maroon px-6 py-12 text-center md:px-16">
+        <p className="mx-auto max-w-[700px] text-[26px] font-light italic leading-[1.6] tracking-[0.02em] text-gold-light max-md:text-xl">
+          {c.archiveQuote}
+        </p>
+      </div>
+
+      {/* ═══════════════════ MOTHER'S ARCHIVE ═══════════════════ */}
+      <section className="reveal bg-ivory px-6 py-[100px] md:px-16" id="mothers-archive">
+        <div className="mb-12 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
+          <div>
+            <div className="mb-3 text-[10px] uppercase tracking-[0.36em] text-gold">{c.archive.eyebrow}</div>
+            <h2 className="text-[38px] font-light italic leading-[1.12] text-maroon max-md:text-[28px]">
+              {c.archive.title1}<br />{c.archive.title2}
+            </h2>
+          </div>
+          <a href="#mothers-archive" className="border-b border-gold/40 pb-[3px] text-[11px] uppercase tracking-[0.22em] text-gold transition-opacity hover:opacity-60">
+            {c.archive.link}
+          </a>
+        </div>
+
+        {/* Archive cards */}
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+          {c.archive.items.map((item, i) => {
+            const images = ['/images/Product reviews/Leyla.png', '/images/Product reviews/Aynur.png', '/images/Product reviews/Nigar.png'];
+            return (
+              <div key={item.name} className="flex flex-col overflow-hidden bg-maroon">
+                <div className="relative overflow-hidden" style={{ height: '600px' }}>
+                  <Image
+                    src={images[i]}
+                    alt={item.name}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover object-center"
+                  />
+                </div>
+                <div className="flex flex-col justify-center px-8 py-6 md:px-10">
+                  <div className="mb-2 text-[9px] uppercase tracking-[0.24em] text-gold/45">{item.tier}</div>
+                  <div className="mb-3 text-[22px] italic font-normal text-gold-light">{item.name}</div>
+                  <p className="text-[15px] italic leading-[1.72] text-gold/55">
+                    &ldquo;{item.story}&rdquo;
+                  </p>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </section>
 
@@ -209,57 +255,6 @@ export function HomeExperience() {
               </div>
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* ═══════════════════ ARCHIVE QUOTE STRIP ═══════════════════ */}
-      <div className="reveal bg-maroon px-6 py-12 text-center md:px-16">
-        <p className="mx-auto max-w-[700px] text-[26px] font-light italic leading-[1.6] tracking-[0.02em] text-gold-light max-md:text-xl">
-          {c.archiveQuote}
-        </p>
-      </div>
-
-      {/* ═══════════════════ MOTHER'S ARCHIVE ═══════════════════ */}
-      <section className="reveal bg-ivory px-6 py-[100px] md:px-16" id="mothers-archive">
-        <div className="mb-12 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
-          <div>
-            <div className="mb-3 text-[10px] uppercase tracking-[0.36em] text-gold">{c.archive.eyebrow}</div>
-            <h2 className="text-[38px] font-light italic leading-[1.12] text-maroon max-md:text-[28px]">
-              {c.archive.title1}<br />{c.archive.title2}
-            </h2>
-          </div>
-          <a href="#mothers-archive" className="border-b border-gold/40 pb-[3px] text-[11px] uppercase tracking-[0.22em] text-gold transition-opacity hover:opacity-60">
-            {c.archive.link}
-          </a>
-        </div>
-
-        {/* Archive cards */}
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
-          {c.archive.items.map((item, i) => {
-            const images = ['/images/Product reviews/Leyla.png', '/images/Product reviews/Aynur.png', '/images/Product reviews/Nigar.png'];
-            return (
-              <div key={item.name} className="grid overflow-hidden bg-maroon" style={{ gridTemplateRows: '2fr 1fr' }}>
-                {/* Image — top 2/3 */}
-                <div className="relative overflow-hidden">
-                  <Image
-                    src={images[i]}
-                    alt={item.name}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                    className="object-cover object-[center_45%]"
-                  />
-                </div>
-                {/* Text — bottom 1/3 */}
-                <div className="flex flex-col justify-center px-8 py-6 md:px-10">
-                  <div className="mb-2 text-[9px] uppercase tracking-[0.24em] text-gold/45">{item.tier}</div>
-                  <div className="mb-3 text-[22px] italic font-normal text-gold-light">{item.name}</div>
-                  <p className="text-[15px] italic leading-[1.72] text-gold/55">
-                    &ldquo;{item.story}&rdquo;
-                  </p>
-                </div>
-              </div>
-            );
-          })}
         </div>
       </section>
 
