@@ -53,7 +53,7 @@ export const siteContent: Record<SiteLocale, SiteCopy> = {
     hero: {
       h1: 'Bu dövr keçib gedir.',
       h1Strong: 'Xatirəsi isə sizinlə qalır.',
-      lead: 'Analığın ilk ayları təkrar olunmur. Atelier Lactéa bu ən dəyərli dövrü ana südündən hazırlanmış zərif zinət əşyasında qoruyaraq onu hər gün yaxınınızda daşıya biləcəyiniz, çox şəxsi və əbədi bir yadigara çevirir.',
+      lead: 'Analığın ilk ayları təkrar olunmur. Atelier Lactéa bu ən dəyərli dövrü ana südündən hazırlanmış zərif zinət əşyasında qoruyaraq onu hər gün yanınızda daşıya biləcəyiniz, çox şəxsi və əbədi bir yadigara çevirir.',
       btn1: 'Konsultasiyaya Başla', btn2: 'Anaların Arxivini Gör', scroll: 'Aşağı'
     },
     focus: {

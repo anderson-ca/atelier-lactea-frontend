@@ -6,15 +6,14 @@ import { Drawer } from 'antd';
 import { useLanguage, type SiteLocale } from '@/lib/language-context';
 import { siteContent } from '@/lib/site-content';
 
-const navHrefs = ['#focus', '#tiers', '#process', '#mothers-archive', '#circle', '#contact'];
+const navHrefs = ['#focus', '#mothers-archive', '#tiers', '#process', '#circle', '#contact'];
 const locales: SiteLocale[] = ['az', 'en', 'ru'];
 
 export function MobileMenu() {
   const [open, setOpen] = useState(false);
   const { locale, setLocale } = useLanguage();
   const c = siteContent[locale];
-  const navItems = [c.nav.work, c.nav.archive, c.nav.process, c.nav.mothers, c.nav.circle, c.nav.contact];
-
+  const navItems = [c.nav.work, c.nav.mothers, c.nav.archive, c.nav.process, c.nav.circle, c.nav.contact];
   const go = (href: string) => {
     setOpen(false);
     const el = document.querySelector(href);

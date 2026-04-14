@@ -7,13 +7,13 @@ import { MobileMenu } from '@/components/layout/mobile-menu';
 const locales: SiteLocale[] = ['az', 'en', 'ru'];
 
 const navHrefs = [
-  '#focus', '#tiers', '#process', '#mothers-archive', '#circle', '#contact'
+  '#focus', '#mothers-archive', '#tiers', '#process', '#circle', '#contact'
 ];
 
 export function SiteHeader() {
   const { locale, setLocale } = useLanguage();
   const c = siteContent[locale];
-  const navItems = [c.nav.work, c.nav.archive, c.nav.process, c.nav.mothers, c.nav.circle, c.nav.contact];
+  const navItems = [c.nav.work, c.nav.mothers, c.nav.archive, c.nav.process, c.nav.circle, c.nav.contact];
 
   return (
     <header className="fixed inset-x-0 top-0 z-[200] flex items-center justify-between border-b border-gold/25 bg-ivory/[0.96] px-6 py-5 backdrop-blur-md md:px-16">
