@@ -219,7 +219,7 @@ export function HomeExperience() {
       </section>
 
       {/* ═══════════════════ PROCESS ═══════════════════ */}
-      <section className="reveal bg-ivory-2 px-6 py-[100px] md:px-16" id="process">
+      <section className="reveal bg-ivory px-6 py-[100px] md:px-16" id="process">
         <div className="mb-[72px]">
           <p className="mb-3 text-xl italic tracking-[0.02em] text-gold">{c.process.intro}</p>
           <h2 className="mb-4 text-[42px] font-light italic leading-[1.12] text-maroon max-md:text-[30px]">
@@ -230,10 +230,10 @@ export function HomeExperience() {
 
         {/* Desktop steps */}
         <div className="relative hidden grid-cols-5 gap-5 md:grid">
-          <div className="steps-line" />
+          <div className="absolute left-[10%] right-[10%] top-[34px] h-px bg-gold/35" />
           {c.process.steps.map((step, i) => (
             <div key={step.name} className="text-center">
-              <div className="relative z-[1] mx-auto mb-[22px] flex h-[52px] w-[52px] items-center justify-center rounded-full border border-gold/45 bg-ivory-2 text-base italic text-gold">
+              <div className="relative z-[1] mx-auto mb-[22px] flex h-[68px] w-[68px] items-center justify-center rounded-full border border-gold/40 bg-maroon text-base italic text-gold-light">
                 {i + 1}
               </div>
               <div className="mb-2 text-sm font-normal text-maroon">{step.name}</div>
