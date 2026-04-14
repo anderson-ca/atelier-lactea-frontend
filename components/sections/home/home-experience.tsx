@@ -187,12 +187,14 @@ export function HomeExperience() {
         <div className="mx-auto grid max-w-[1100px] grid-cols-1 gap-0 bg-gold/15 md:grid-cols-3">
           {c.tiers.items.map((tier, i) => {
             const featured = i === 1;
+            const bgStyle = i === 0 ? {} : i === 1 ? { background: '#500e1d' } : { background: '#2a0610' };
             return (
               <div
                 key={TIER_NAMES[i]}
                 onClick={() => goTo('consult')}
+                style={i === 1 ? { ...bgStyle, outline: '2px solid #c8a882', outlineOffset: '-2px' } : bgStyle}
                 className={`cursor-pointer border-r border-gold/15 p-11 transition-transform duration-300 last:border-r-0 hover:-translate-y-1 md:p-[54px_46px] ${
-                  featured ? 'bg-maroon' : 'bg-ivory'
+                  i === 0 ? 'bg-[#fdf4e7] ring-1 ring-gold/30' : ''
                 }`}
               >
                 <div className={`mb-[18px] text-[10px] tracking-[0.3em] uppercase ${featured ? 'text-gold/70' : 'text-gold/50'}`}>
