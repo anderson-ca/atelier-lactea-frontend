@@ -41,6 +41,11 @@ export type SiteCopy = {
     whatsapp: { body: string; link: string };
   };
   footer: { links: string[]; tagline: string };
+  privacy: {
+    title: string;
+    lastUpdated: string;
+    sections: Array<{ heading: string; body: string }>;
+  };
 };
 
 export const siteContent: Record<SiteLocale, SiteCopy> = {
@@ -53,7 +58,7 @@ export const siteContent: Record<SiteLocale, SiteCopy> = {
     hero: {
       h1: 'Bu dövr keçib gedir.',
       h1Strong: 'Xatirəsi isə sizinlə qalır.',
-      lead: 'Analığın ilk ayları təkrar olunmur. Atelier Lactéa bu ən dəyərli dövrü ana südündən hazırlanmış zərif zinət əşyasında qoruyaraq onu hər gün yaxınınızda daşıya biləcəyiniz, çox şəxsi və əbədi bir yadigara çevirir.',
+      lead: 'Analığın ilk ayları təkrar olunmur. Atelier Lactéa bu ən dəyərli dövrü ana südündən hazırlanmış zərif zinət əşyasında qoruyaraq onu hər gün yanınızda daşıya biləcəyiniz, çox şəxsi və əbədi bir yadigara çevirir.',
       btn1: 'Konsultasiyaya Başla', btn2: 'Anaların Arxivini Gör', scroll: 'Aşağı'
     },
     focus: {
@@ -140,6 +145,18 @@ export const siteContent: Record<SiteLocale, SiteCopy> = {
     footer: {
       links: ['Missiyamız', 'Kolleksiya', 'Anaların Arxivi', 'Anaların Dairəsi', 'Məxfilik'],
       tagline: 'Yaratdığınız hər sifariş başqa bir anaya kömək edir'
+    },
+    privacy: {
+      title: 'Məxfilik Siyasəti',
+      lastUpdated: 'Son yenilənmə: İyun 2026',
+      sections: [
+        { heading: 'Bu siyasət haqqında', body: 'Atelier Lactéa olaraq müştərilərimizin məxfiliyinə dərin hörmət bəsləyirik. Bu siyasət, sifarişiniz zamanı bizimlə bölüşdüyünüz şəxsi məlumatların və bioloji materialların necə idarə olunduğunu izah edir.' },
+        { heading: 'Topladığımız məlumatlar', body: 'Sifarişinizi tamamlamaq üçün adınızı, əlaqə məlumatlarınızı (telefon nömrəsi, e-poçt) və çatdırılma ünvanınızı toplaya bilərik. Bundan əlavə, sifarişinizə uyğun olaraq ana südü, uşaq saçı və ya digər bioloji material qəbul edirik.' },
+        { heading: 'Bioloji materialların idarə edilməsi', body: 'Göndərdiyiniz bioloji material yalnız sizin üçün hazırlanan zinət əşyasının istehsalında istifadə olunur. Materialınız üçüncü şəxslərə verilmir, paylaşılmır və ya başqa məqsədlər üçün istifadə edilmir.\n\nİstehsal başa çatdıqdan sonra qalan material təhlükəsiz şəkildə məhv edilir. Materialınızın qaytarılmasını istəsəniz, sifarişdən əvvəl bunu bizə bildirməlisiniz.' },
+        { heading: 'Məlumatlarınızın saxlanması', body: 'Şəxsi məlumatlarınız yalnız sifarişinizin icrası üçün lazım olan müddət ərzində saxlanılır. Uçot və mühasibat öhdəlikləri üçün tələb olunan məlumatlar qanunvericiliyə uyğun olaraq saxlanılır.' },
+        { heading: 'Məlumatlarınızın paylaşılması', body: 'Şəxsi məlumatlarınız heç bir üçüncü tərəfə satılmır. Məlumatlar yalnız çatdırılma xidmətləri kimi əməliyyat tərəfdaşları ilə, yalnız sifarişinizin yerinə yetirilməsi üçün paylaşıla bilər.' },
+        { heading: 'Əlaqə', body: 'Bu siyasət ilə bağlı hər hansı sualınız varsa, WhatsApp və ya e-poçt vasitəsilə bizimlə əlaqə saxlaya bilərsiniz.\n\nE-poçt: info@atelierlactea.com' },
+      ]
     }
   },
 
@@ -239,6 +256,18 @@ export const siteContent: Record<SiteLocale, SiteCopy> = {
     footer: {
       links: ['Our Mission', 'Collection', "Mother's Archive", "The Mother's Circle", 'Privacy'],
       tagline: 'Every heirloom created helps another mother'
+    },
+    privacy: {
+      title: 'Privacy Policy',
+      lastUpdated: 'Last updated: June 2026',
+      sections: [
+        { heading: 'About this policy', body: 'At Atelier Lactéa, we hold the privacy of our clients with the utmost care. This policy explains how we handle the personal information and biological materials you share with us during the order process.' },
+        { heading: 'What we collect', body: 'To complete your order, we may collect your name, contact details (phone number, email), and delivery address. We also receive biological material — breastmilk, baby hair, or birthstone — as relevant to your chosen piece.' },
+        { heading: 'How we handle biological materials', body: 'Any biological material you send us is used solely to create your piece. It is never shared, transferred, or used for any other purpose.\n\nOnce your piece is complete, any remaining material is disposed of safely and with care. If you wish to have unused material returned, please inform us before your order is confirmed.' },
+        { heading: 'How long we keep your information', body: 'Personal information is retained only for as long as necessary to fulfill your order. Information required for accounting and legal compliance is retained in accordance with applicable law.' },
+        { heading: 'Sharing your information', body: 'Your personal information is never sold. It may be shared with operational partners such as delivery services, solely for the purpose of fulfilling your order.' },
+        { heading: 'Contact', body: 'If you have any questions about this policy, please reach us via WhatsApp or email.\n\nEmail: info@atelierlactea.com' },
+      ]
     }
   },
 
@@ -338,6 +367,18 @@ export const siteContent: Record<SiteLocale, SiteCopy> = {
     footer: {
       links: ['Наша миссия', 'Коллекция', 'Архив Матери', 'Круг Матерей', 'Конфиденциальность'],
       tagline: 'Каждая созданная реликвия помогает другой матери'
+    },
+    privacy: {
+      title: 'Политика конфиденциальности',
+      lastUpdated: 'Последнее обновление: июнь 2026',
+      sections: [
+        { heading: 'Об этой политике', body: 'В Atelier Lactéa мы относимся к конфиденциальности наших клиентов с глубоким уважением. Эта политика объясняет, как мы обращаемся с личными данными и биологическими материалами, которые вы передаёте нам в процессе оформления заказа.' },
+        { heading: 'Какие данные мы собираем', body: 'Для выполнения вашего заказа мы можем собирать ваше имя, контактные данные (номер телефона, адрес электронной почты) и адрес доставки. Мы также принимаем биологический материал — грудное молоко, волосы ребёнка или камень по месяцу рождения.' },
+        { heading: 'Обращение с биологическими материалами', body: 'Любой биологический материал, который вы нам присылаете, используется исключительно для создания вашего украшения. Он никогда не передаётся третьим лицам и не используется в иных целях.\n\nПосле завершения работы оставшийся материал утилизируется безопасным образом. Если вы хотите получить неиспользованный материал обратно, сообщите нам об этом до подтверждения заказа.' },
+        { heading: 'Хранение данных', body: 'Личные данные хранятся только в течение времени, необходимого для выполнения вашего заказа. Данные, необходимые для бухгалтерского учёта и соблюдения законодательства, хранятся в соответствии с применимым законодательством.' },
+        { heading: 'Передача данных', body: 'Ваши личные данные никогда не продаются. Они могут быть переданы только операционным партнёрам — например, службам доставки — исключительно для выполнения вашего заказа.' },
+        { heading: 'Контакты', body: 'Если у вас есть вопросы по этой политике, свяжитесь с нами через WhatsApp или по электронной почте.\n\nE-mail: info@atelierlactea.com' },
+      ]
     }
   }
 };
