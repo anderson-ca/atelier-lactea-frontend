@@ -3,7 +3,7 @@
 import { useLanguage } from '@/lib/language-context';
 import { siteContent } from '@/lib/site-content';
 
-const footerHrefs = ['#focus', '#tiers', '#mothers-archive', '#circle', '#'];
+const footerHrefs = ['#focus', '#tiers', '#mothers-archive', '#circle', '/privacy'];
 
 export function SiteFooter() {
   const { locale } = useLanguage();
